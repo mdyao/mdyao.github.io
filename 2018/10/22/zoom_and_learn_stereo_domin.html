@@ -77,18 +77,18 @@
 
 
 
-<meta name="description" content="写在前面：CVPR2018，针对双目匹配在训练和实际应用中存在的domin transfer问题。由于商业原因，作者只公布了测试代码。  ![phone](../../upload_image/zoom_and_learn/phone.png)    题目：Zoom and Learn: Generalizing Deep Stereo Matching to Novel Domains作者：Ji">
+<meta name="description" content="写在前面：CVPR2018，针对双目匹配在训练和实际应用中存在的domin transfer问题。由于商业原因，作者只公布了测试代码。  ![phone](paper_Zoom and Learn/phone.png)    题目：Zoom and Learn: Generalizing Deep Stereo Matching to Novel Domains作者：Jiahao Pang$^1$">
 <meta name="keywords" content="论文笔记,深度信息">
 <meta property="og:type" content="article">
 <meta property="og:title" content="论文笔记：Zoom and Learn:Generalizing Deep Stereo Matching to Novel Domains">
 <meta property="og:url" content="http://heres-y.github.io/2018/10/22/zoom_and_learn_stereo_domin.html">
 <meta property="og:site_name" content="Heres-y&#39;s Blog">
-<meta property="og:description" content="写在前面：CVPR2018，针对双目匹配在训练和实际应用中存在的domin transfer问题。由于商业原因，作者只公布了测试代码。  ![phone](../../upload_image/zoom_and_learn/phone.png)    题目：Zoom and Learn: Generalizing Deep Stereo Matching to Novel Domains作者：Ji">
+<meta property="og:description" content="写在前面：CVPR2018，针对双目匹配在训练和实际应用中存在的domin transfer问题。由于商业原因，作者只公布了测试代码。  ![phone](paper_Zoom and Learn/phone.png)    题目：Zoom and Learn: Generalizing Deep Stereo Matching to Novel Domains作者：Jiahao Pang$^1$">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-23T11:42:35.175Z">
+<meta property="og:updated_time" content="2019-06-18T14:38:27.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="论文笔记：Zoom and Learn:Generalizing Deep Stereo Matching to Novel Domains">
-<meta name="twitter:description" content="写在前面：CVPR2018，针对双目匹配在训练和实际应用中存在的domin transfer问题。由于商业原因，作者只公布了测试代码。  ![phone](../../upload_image/zoom_and_learn/phone.png)    题目：Zoom and Learn: Generalizing Deep Stereo Matching to Novel Domains作者：Ji">
+<meta name="twitter:description" content="写在前面：CVPR2018，针对双目匹配在训练和实际应用中存在的domin transfer问题。由于商业原因，作者只公布了测试代码。  ![phone](paper_Zoom and Learn/phone.png)    题目：Zoom and Learn: Generalizing Deep Stereo Matching to Novel Domains作者：Jiahao Pang$^1$">
 
 
 
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  983
+                  989
                 </span>
               
 
@@ -436,7 +436,7 @@
       
         <p>写在前面：CVPR2018，针对双目匹配在训练和实际应用中存在的domin transfer问题。<br>由于商业原因，作者只公布了测试代码。</p>
 <div align="center">
-![phone](../../upload_image/zoom_and_learn/phone.png)
+![phone](paper_Zoom and Learn/phone.png)
 
 </div>
 
@@ -482,22 +482,22 @@
 </ul>
 <h3 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h3><p>尺度多样性。</p>
 <h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><div align="center">
-![Algorithm](../../upload_image/zoom_and_learn/Algorithm.png)
+![Algorithm](paper_Zoom and Learn/Algorithm.png)
 
 </div>
 
 
 <h4 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h4><p><strong>定量评价</strong><br>这里的评价指标很有意思。由于作者在三个数据集上进行了验证，有一个是和训练集相同的FlyingThings3D-80,另外一个是没有GT的手机拍摄的数据集，还有KITTI2015。</p>
 <div align="center">
-![performace1](../../upload_image/zoom_and_learn/performance1.png)
-![performace2](../../upload_image/zoom_and_learn/performance2.png)
+![performace1](paper_Zoom and Learn/performance1.png)
+![performace2](paper_Zoom and Learn/performance2.png)
 </div>
 
 <p>EPE:End-point-End<br>3ER:three-pixel error rate<br>这里所谓的PSNR和SSIM是利用disparity和右图生成的左图与真正的左图计算的PSNR和SSIM。左右图warp后肯定会有occlusion的存在，不知道这么PSNR意义是否很大。</p>
 <p><strong>视觉指标</strong></p>
 <div align="center">
-![result1](../../upload_image/zoom_and_learn/result1.png)
-![result2](../../upload_image/zoom_and_learn/result2.png)
+![result1](paper_Zoom and Learn/result1.png)
+![result2](paper_Zoom and Learn/result2.png)
 </div>
 
 
@@ -526,7 +526,7 @@
   <p><span>本文标题:</span><a href="/2018/10/22/zoom_and_learn_stereo_domin.html">论文笔记：Zoom and Learn:Generalizing Deep Stereo Matching to Novel Domains</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Heres-y 的个人博客">Heres-y</a></p>
   <p><span>发布时间:</span>2018年10月22日 - 15:10</p>
-  <p><span>最后更新:</span>2018年10月23日 - 19:10</p>
+  <p><span>最后更新:</span>2019年06月18日 - 22:06</p>
   <p><span>原始链接:</span><a href="/2018/10/22/zoom_and_learn_stereo_domin.html" title="论文笔记：Zoom and Learn:Generalizing Deep Stereo Matching to Novel Domains">http://heres-y.github.io/2018/10/22/zoom_and_learn_stereo_domin.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://heres-y.github.io/2018/10/22/zoom_and_learn_stereo_domin.html" aria-label="复制成功！"></i></span>
   </p>
@@ -600,8 +600,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/07/SR.html" rel="prev" title="论文笔记：SR总结">
-                论文笔记：SR总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/07/DEEP3D.html" rel="prev" title="论文笔记|DEEP3D">
+                论文笔记|DEEP3D <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -686,7 +686,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -793,7 +793,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共14.0k字</span>
+  <span class="post-count">博客全站共13.5k字</span>
 </div>
 
         

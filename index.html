@@ -302,228 +302,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://heres-y.github.io/2019/06/14/dplabv123.html">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Heres-y">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/spongebob_72px_1066516_easyicon.net.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heres-y's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/14/dplabv123.html" itemprop="url">论文笔记|DeepLab_v123+</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-14T17:10:00+08:00">
-                2019-06-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/文章阅读/" itemprop="url" rel="index">
-                    <span itemprop="name">文章阅读</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/06/14/dplabv123.html" class="leancloud_visitors" data-flag-title="论文笔记|DeepLab_v123+">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  546
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <a id="more"></a>
-
-<h3 id="DeepLab-v3"><a href="#DeepLab-v3" class="headerlink" title="DeepLab v3"></a>DeepLab v3</h3><p>语义分割中的两大</p>
-<p>保留问题：</p>
-<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
-<li>新的loss，end2end的unsupervised monocular depth estimation网络</li>
-<li>应用在了新的数据集上</li>
-<li>对train loss和图像生成模型进行了评估。图像生成模型是指生成视差图的模型。</li>
-</ul>
-<h3 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h3><p>网络结构：</p>
-<p>encoder-decoder结构，包括长skip。通过一个带scale的sigmoid函数，将输出限制在(0,0.3*当前scale下的图像宽度)。<br>作者采用的激活为ELU（参看深度学习(1)-深度学习中的核函数（激活函数））。<br>decoder结构中，作者没有用广泛采用的deconvolution结构，而是用一个最近邻升采样+后续的卷积层的方式来做分辨率提升。<br>作者采用Adam模式（参见cs31n_lesson6_7/5.调参）来进行训练。</p>
-<p>和一般视觉深度学习训练一样，数据增强（data augmentation）是必要的。</p>
-<p>作者也尝试将encoder替换成Resnet50，而其他部分不变。 </p>
-<p>LOSS：</p>
-<div align="center">
-$$
-C_s=\alpha_{ap}(C^l_{ap}+C^r_{ap})+\alpha_{ds}(C^l_{ds}+C^r_{ds})+\alpha_{lr}(C^l_{lr}+C^r_{lr})
-$$
-</div>
-
-<ul>
-<li>$C_{ap}$:纹理loss，与输入图像纹理相关。<br><img src="/2019/06/14/dplabv123/../upload_image/monodepth/Cap.png" alt="Cap"><br>$\alpha=0.8$<br>$C_{ap}$来自于Loss Functions for Neural Networks for Image Processing,也是主要起作用的部分！</li>
-</ul>
-<ul>
-<li><p>$C_{ds}$:平滑loss<br><img src="/2019/06/14/dplabv123/../upload_image/monodepth/Cds.png" alt="Cds"><br>直观理解，原图I梯度越大的地方，要求视差图d梯度越大；原图I梯度越小的地方（平滑），允许视差图d梯度越小（平滑）。</p>
-</li>
-<li><p>$C_{lr}$:左右一致性loss<br><img src="/2019/06/14/dplabv123/../upload_image/monodepth/Clr.png" alt="Clr"></p>
-</li>
-</ul>
-<h4 id="速度"><a href="#速度" class="headerlink" title="速度"></a>速度</h4><p>35 ms for a 512*256 image on one modern GPU</p>
-<h4 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h4><p>【作者在估计深度的过程中确实没有用到激光或者结构光的GT，但仍需要已知基线和焦距的双目图像对作为训练输入，测试时只需将单张图作为输入。感觉monocular有点牵强】</p>
-<h4 id="补充阅读"><a href="#补充阅读" class="headerlink" title="补充阅读"></a>补充阅读</h4><ul>
-<li>Dispnet &amp; FCN，本文使用的网络结构</li>
-<li>STN ，作者warp图像的主要方式</li>
-<li>本文提到另一个工作DeepStereo：从多个邻近视角选取像素合成新视角的图像。Deepstereo: Learning to predict new views from the world’s imagery. (CVPR2016)J. Flynn, I. Neulander, J. Philbin, and N. Snavely. </li>
-</ul>
-<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://blog.csdn.net/Kevin_cc98/article/details/78945802" target="_blank" rel="noopener">论文笔记-深度估计(5)Unsupervised Monocular Depth Estimation with Left-Right Consistency</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-      
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://heres-y.github.io/2019/04/15/Valse2019.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -812,7 +590,7 @@ $$
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  733
+                  735
                 </span>
               
 
@@ -1003,7 +781,7 @@ $$
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  703
+                  706
                 </span>
               
 
@@ -1288,6 +1066,196 @@ $$
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://heres-y.github.io/2018/11/07/SR.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Heres-y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/spongebob_72px_1066516_easyicon.net.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heres-y's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/07/SR.html" itemprop="url">论文笔记：SR总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-07T17:10:00+08:00">
+                2018-11-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/文章阅读/" itemprop="url" rel="index">
+                    <span itemprop="name">文章阅读</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/11/07/SR.html" class="leancloud_visitors" data-flag-title="论文笔记：SR总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  414
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>写在前面：<br>这是一篇不太完善的CNN超分辨总结，整理了近年来深度学习在超分辨领域比较有代表性的工作，随缘更新。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/07/SR.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://heres-y.github.io/2018/11/07/DEEP3D.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1480,196 +1448,6 @@ $$
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://heres-y.github.io/2018/11/07/SR.html">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Heres-y">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/spongebob_72px_1066516_easyicon.net.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heres-y's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/07/SR.html" itemprop="url">论文笔记：SR总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-07T17:10:00+08:00">
-                2018-11-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/文章阅读/" itemprop="url" rel="index">
-                    <span itemprop="name">文章阅读</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/11/07/SR.html" class="leancloud_visitors" data-flag-title="论文笔记：SR总结">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  414
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>写在前面：<br>这是一篇不太完善的CNN超分辨总结，整理了近年来深度学习在超分辨领域比较有代表性的工作，随缘更新。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/07/SR.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-    <div>
-      
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://heres-y.github.io/2018/10/22/zoom_and_learn_stereo_domin.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1766,7 +1544,7 @@ $$
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  983
+                  989
                 </span>
               
 
@@ -1806,7 +1584,7 @@ $$
         
           <p>写在前面：CVPR2018，针对双目匹配在训练和实际应用中存在的domin transfer问题。<br>由于商业原因，作者只公布了测试代码。</p>
 <div align="center">
-![phone](../../upload_image/zoom_and_learn/phone.png)
+![phone](paper_Zoom and Learn/phone.png)
 
 </div>
 
@@ -2237,6 +2015,198 @@ $$
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://heres-y.github.io/2018/08/03/l0l1l2re.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Heres-y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/spongebob_72px_1066516_easyicon.net.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heres-y's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/03/l0l1l2re.html" itemprop="url">正则项之L0L1L2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-03T21:54:00+08:00">
+                2018-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/深度学习/" itemprop="url" rel="index">
+                    <span itemprop="name">深度学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/03/l0l1l2re.html" class="leancloud_visitors" data-flag-title="正则项之L0L1L2">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,271
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><strong>注意，本文讨论的是L0L1L2范数作为<a href="https://blog.csdn.net/heyongluoyao8/article/details/52462400" target="_blank" rel="noopener">代价函数/损失函数/目标函数/期望风险</a>中<a href="http://www.datalearner.com/blog/1051509805091522" target="_blank" rel="noopener">正则项/结构风险</a>的应用，而不是作为经验风险项的应用。</strong></p>
+<p>在经验风险中，<strong>L1(MAE)L2(MSE)</strong>两者常被用来约束数据的逻辑回归。虽然同样用于逻辑回归，但终归是有区别滴(存在即合理嘛)，两者之间的<a href="http://baijiahao.baidu.com/s?id=1603857666277651546&wfr=spider&for=pc" target="_blank" rel="noopener">不同</a>可以总结为<strong>MSE计算方便利于模型的学习，MAE对异常点具有更高的鲁棒性但在损失较小时仍有较大梯度，求解效率低。</strong></p>
+<p>下面详细介绍L0L1L2范数以及它们作为正则项的应用。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/03/l0l1l2re.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -2289,7 +2259,7 @@ $$
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2380,7 +2350,7 @@ $$
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共14.0k字</span>
+  <span class="post-count">博客全站共13.5k字</span>
 </div>
 
         

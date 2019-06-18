@@ -85,12 +85,12 @@
 <meta property="og:site_name" content="Heres-y&#39;s Blog">
 <meta property="og:description" content="注意，本文讨论的是L0L1L2范数作为代价函数/损失函数/目标函数/期望风险中正则项/结构风险的应用，而不是作为经验风险项的应用。 在经验风险中，L1(MAE)L2(MSE)两者常被用来约束数据的逻辑回归。虽然同样用于逻辑回归，但终归是有区别滴(存在即合理嘛)，两者之间的不同可以总结为MSE计算方便利于模型的学习，MAE对异常点具有更高的鲁棒性但在损失较小时仍有较大梯度，求解效率低。 下面详细介绍">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://heres-y.github.io/2018/08/03/l0l1l2re/upload_image/laplace_distribution.png">
+<meta property="og:image" content="http://heres-y.github.io/2018/08/03/l0l1l2re/laplace_distribution.png">
 <meta property="og:updated_time" content="2018-08-03T13:54:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则项之L0L1L2">
 <meta name="twitter:description" content="注意，本文讨论的是L0L1L2范数作为代价函数/损失函数/目标函数/期望风险中正则项/结构风险的应用，而不是作为经验风险项的应用。 在经验风险中，L1(MAE)L2(MSE)两者常被用来约束数据的逻辑回归。虽然同样用于逻辑回归，但终归是有区别滴(存在即合理嘛)，两者之间的不同可以总结为MSE计算方便利于模型的学习，MAE对异常点具有更高的鲁棒性但在损失较小时仍有较大梯度，求解效率低。 下面详细介绍">
-<meta name="twitter:image" content="http://heres-y.github.io/2018/08/03/l0l1l2re/upload_image/laplace_distribution.png">
+<meta name="twitter:image" content="http://heres-y.github.io/2018/08/03/l0l1l2re/laplace_distribution.png">
 
 
 
@@ -440,6 +440,8 @@
 <p>在经验风险中，<strong>L1(MAE)L2(MSE)</strong>两者常被用来约束数据的逻辑回归。虽然同样用于逻辑回归，但终归是有区别滴(存在即合理嘛)，两者之间的<a href="http://baijiahao.baidu.com/s?id=1603857666277651546&wfr=spider&for=pc" target="_blank" rel="noopener">不同</a>可以总结为<strong>MSE计算方便利于模型的学习，MAE对异常点具有更高的鲁棒性但在损失较小时仍有较大梯度，求解效率低。</strong></p>
 <p>下面详细介绍L0L1L2范数以及它们作为正则项的应用。</p>
 <a id="more"></a>
+
+
 <p>一般正则项是以下公式的形式：</p>
 <p>$$<br>\sum_{n=1}^{N}<br>\left.<br>\middle|<br>t_n-\bf w^T \phi(\bf x_n)<br>\middle|<br>\right.^k<br>+
 \lambda<br>\sum_{j=1}^M<br>\left.<br>\middle|<br>w_j<br>\middle|<br>\right.^q<br>$$</p>
@@ -450,10 +452,12 @@
 <h3 id="L1范数"><a href="#L1范数" class="headerlink" title="L1范数"></a>L1范数</h3><p>L1范数是指向量中各个元素的绝对值之和,又称曼哈顿距离，马氏距离（Manhattan distance）。</p>
 <p>L1正则算子可以实现稀疏，因此又被称为“稀疏规则算子”。而在应用中，也多采用L1正则项实现模型的稀疏性。那么问题来了，L0正则算子具有明显的稀疏约束，而为什么要使用L1正则算子却不用L0呢？</p>
 <p>主要原因有两个，一是L1可以确实实现稀疏约束，二是L0不可导难以优化求解。</p>
-<p>关于L1为什么能够实现稀疏，简单解释是因为<strong>任何的规则化算子，如果它在Wi=0的地方不可微，并且可以分解为一个“求和”的形式，那么这个规则化算子就可以实现稀疏。</strong>，直观一点讲的话，<strong>L1范数更加倾向于选择一些数目较少的较大的值(换句话讲选择较多的零)。</strong>而从优化/先验知识/数值计算的角度更为详细地去理解L1的稀疏性，请移步<a href="https://www.cnblogs.com/hellcat/p/7979711.html#_label0" target="_blank" rel="noopener">『科学计算』L0、L1与L2范数_理解</a>。</p>
+<p>关于L1为什么能够实现稀疏，简单解释是因为<strong>任何的规则化算子，如果它在Wi=0的地方不可微，并且可以分解为一个“求和”的形式，那么这个规则化算子就可以实现稀疏。</strong>，直观一点讲的话，<strong>L1范数更加倾向于选择一些数目较少的较大的值(换句话讲选择较多的零)。</strong>而从优化/先验知识/数值计算的角度更为详细地去理解L1的稀疏性，请移步<a href="https://www.cnblogs.com/hellcat/p/7979711.html#_label0" target="_blank" rel="noopener">『科学计算』L0、L1与L2范数理解</a>。</p>
 <div align="center">
-<img src="/2018/08/03/l0l1l2re/upload_image/laplace_distribution.png" width="50%" alt="数值计算角度解释L1范数的稀疏性">
+<img src="/2018/08/03/l0l1l2re/laplace_distribution.png" width="50%" alt="数值计算角度解释L1范数的稀疏性">
 </div>
+
+
 
 
 
@@ -645,7 +649,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -752,7 +756,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共14.0k字</span>
+  <span class="post-count">博客全站共13.5k字</span>
 </div>
 
         

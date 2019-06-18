@@ -85,14 +85,14 @@
 <meta property="og:site_name" content="Heres-y&#39;s Blog">
 <meta property="og:description" content="写在前面：此文发于CVPR2017，并在项目主页公布了代码。本文中文翻译：读Unsupervised Monocular Depth Estimation with LeftRight Consistency代码中文解读：[读源码] Unsupervised Monocular Depth Estimation with Left-Right Consistency关于近几年单目深度估计的文章，可">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://heres-y.github.io/2018/11/07/upload_image/monodepth/Cap.png">
-<meta property="og:image" content="http://heres-y.github.io/2018/11/07/upload_image/monodepth/Cds.png">
-<meta property="og:image" content="http://heres-y.github.io/2018/11/07/upload_image/monodepth/Clr.png">
-<meta property="og:updated_time" content="2019-06-14T02:23:18.969Z">
+<meta property="og:image" content="http://heres-y.github.io/2018/11/07/mono_depth/Cap.png">
+<meta property="og:image" content="http://heres-y.github.io/2018/11/07/mono_depth/Cds.png">
+<meta property="og:image" content="http://heres-y.github.io/2018/11/07/mono_depth/Clr.png">
+<meta property="og:updated_time" content="2019-06-18T14:39:03.496Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="论文笔记|Unsupervised Monocular Depth Estimation with Left-Right Consistency">
 <meta name="twitter:description" content="写在前面：此文发于CVPR2017，并在项目主页公布了代码。本文中文翻译：读Unsupervised Monocular Depth Estimation with LeftRight Consistency代码中文解读：[读源码] Unsupervised Monocular Depth Estimation with Left-Right Consistency关于近几年单目深度估计的文章，可">
-<meta name="twitter:image" content="http://heres-y.github.io/2018/11/07/upload_image/monodepth/Cap.png">
+<meta name="twitter:image" content="http://heres-y.github.io/2018/11/07/mono_depth/Cap.png">
 
 
 
@@ -471,12 +471,12 @@ $$
 </div>
 
 <ul>
-<li>$C_{ap}$:纹理loss，与输入图像纹理相关。<br><img src="/2018/11/07/mono_depth/../upload_image/monodepth/Cap.png" alt="Cap"><br>$\alpha=0.8$<br>$C_{ap}$来自于Loss Functions for Neural Networks for Image Processing,也是主要起作用的部分！</li>
+<li>$C_{ap}$:纹理loss，与输入图像纹理相关。<br><img src="/2018/11/07/mono_depth/Cap.png" alt="Cap"><br>$\alpha=0.8$<br>$C_{ap}$来自于Loss Functions for Neural Networks for Image Processing,也是主要起作用的部分！</li>
 </ul>
 <ul>
-<li><p>$C_{ds}$:平滑loss<br><img src="/2018/11/07/mono_depth/../upload_image/monodepth/Cds.png" alt="Cds"><br>直观理解，原图I梯度越大的地方，要求视差图d梯度越大；原图I梯度越小的地方（平滑），允许视差图d梯度越小（平滑）。</p>
+<li><p>$C_{ds}$:平滑loss<br><img src="/2018/11/07/mono_depth/Cds.png" alt="Cds"><br>直观理解，原图I梯度越大的地方，要求视差图d梯度越大；原图I梯度越小的地方（平滑），允许视差图d梯度越小（平滑）。</p>
 </li>
-<li><p>$C_{lr}$:左右一致性loss<br><img src="/2018/11/07/mono_depth/../upload_image/monodepth/Clr.png" alt="Clr"></p>
+<li><p>$C_{lr}$:左右一致性loss<br><img src="/2018/11/07/mono_depth/Clr.png" alt="Clr"></p>
 </li>
 </ul>
 <h4 id="速度"><a href="#速度" class="headerlink" title="速度"></a>速度</h4><p>35 ms for a 512*256 image on one modern GPU</p>
@@ -505,7 +505,7 @@ $$
   <p><span>本文标题:</span><a href="/2018/11/07/mono_depth.html">论文笔记|Unsupervised Monocular Depth Estimation with Left-Right Consistency</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Heres-y 的个人博客">Heres-y</a></p>
   <p><span>发布时间:</span>2018年11月07日 - 17:11</p>
-  <p><span>最后更新:</span>2019年06月14日 - 10:06</p>
+  <p><span>最后更新:</span>2019年06月18日 - 22:06</p>
   <p><span>原始链接:</span><a href="/2018/11/07/mono_depth.html" title="论文笔记|Unsupervised Monocular Depth Estimation with Left-Right Consistency">http://heres-y.github.io/2018/11/07/mono_depth.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://heres-y.github.io/2018/11/07/mono_depth.html" aria-label="复制成功！"></i></span>
   </p>
@@ -569,8 +569,8 @@ $$
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/07/DEEP3D.html" rel="next" title="论文笔记|DEEP3D">
-                <i class="fa fa-chevron-left"></i> 论文笔记|DEEP3D
+              <a href="/2018/11/07/SR.html" rel="next" title="论文笔记：SR总结">
+                <i class="fa fa-chevron-left"></i> 论文笔记：SR总结
               </a>
             
           </div>
@@ -665,7 +665,7 @@ $$
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -772,7 +772,7 @@ $$
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共14.0k字</span>
+  <span class="post-count">博客全站共13.5k字</span>
 </div>
 
         
