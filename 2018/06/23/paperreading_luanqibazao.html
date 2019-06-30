@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/spongebob_32px_1066516_easyicon.net.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/spongebob_32px_1066516_easyicon.net.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/spongebob_16px_1066516_easyicon.net.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/spongebob_32px_1066516_easyicon.net.png?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="论文笔记,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Enhancing the Spatial Resolution of Stereo Images using Parallax Prior这篇论文的main idea 是使用DPN网络和STN网络结合，针对RGB+NIR融合过程出现匹配不准确的现象提出一种多模态融合方案。 STN首先看什么是STN网络。这里就不看原论文了，在CSDN上找了一些文章。 首先看STN的insight：文章提出的STN">
+<meta name="keywords" content="论文笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文笔记：乱七八糟集合">
+<meta property="og:url" content="http://heres-y.github.io/2018/06/23/paperreading_luanqibazao.html">
+<meta property="og:site_name" content="Heres-y&#39;s Blog">
+<meta property="og:description" content="Enhancing the Spatial Resolution of Stereo Images using Parallax Prior这篇论文的main idea 是使用DPN网络和STN网络结合，针对RGB+NIR融合过程出现匹配不准确的现象提出一种多模态融合方案。 STN首先看什么是STN网络。这里就不看原论文了，在CSDN上找了一些文章。 首先看STN的insight：文章提出的STN">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-23T14:36:09.427Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="论文笔记：乱七八糟集合">
+<meta name="twitter:description" content="Enhancing the Spatial Resolution of Stereo Images using Parallax Prior这篇论文的main idea 是使用DPN网络和STN网络结合，针对RGB+NIR融合过程出现匹配不准确的现象提出一种多模态融合方案。 STN首先看什么是STN网络。这里就不看原论文了，在CSDN上找了一些文章。 首先看STN的insight：文章提出的STN">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://heres-y.github.io/2018/06/23/paperreading_luanqibazao.html">
+
+
+
+
+
+  <title>论文笔记：乱七八糟集合 | Heres-y's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?00273972c8cb78dfd56896abb70d60a5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Heres-y's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">欢迎来到Heres-y的博客小站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://heres-y.github.io/2018/06/23/paperreading_luanqibazao.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Heres-y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/spongebob_72px_1066516_easyicon.net.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heres-y's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">论文笔记：乱七八糟集合</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-23T16:40:00+08:00">
+                2018-06-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/06/23/paperreading_luanqibazao.html" class="leancloud_visitors" data-flag-title="论文笔记：乱七八糟集合">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,240
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Enhancing-the-Spatial-Resolution-of-Stereo-Images-using-Parallax-Prior"><a href="#Enhancing-the-Spatial-Resolution-of-Stereo-Images-using-Parallax-Prior" class="headerlink" title="Enhancing the Spatial Resolution of Stereo Images using Parallax Prior"></a>Enhancing the Spatial Resolution of Stereo Images using Parallax Prior</h3><p>这篇论文的main idea 是使用DPN网络和STN网络结合，针对RGB+NIR融合过程出现匹配不准确的现象提出一种多模态融合方案。</p>
+<h3 id="STN"><a href="#STN" class="headerlink" title="STN"></a>STN</h3><p>首先看什么是STN网络。这里就不看原论文了，在CSDN上找了一些文章。</p>
+<p>首先看STN的insight：<br>文章提出的STN的作用类似于传统的矫正的作用。比如人脸识别中，需要先对检测的图片进行关键点检测，然后使用关键点来进行对齐操作。但是这样的一个过程是需要额外进行处理的。[进行什么样的额外处理？]但是有了STN后，检测完的人脸，直接就可以做对齐操作。关键的一点就是这个矫正过程是可以进行梯度传导的。想象一下，人脸检测完了，直接使用ROI pooling取出人脸的feature map，输入STN就可以进行矫正，输出矫正后的人脸。后面还可以再接点卷积操作，直接就可以进行分类，人脸识别的训练。整个流程从理论上来说，都有梯度传导，理论上可以将检测+对齐+识别使用一个网络实现。当然实际操作中可能会有各种trick。</p>
+<p>STN网络由Localisation Network ，Grid generator，Sampler，3个部分组成。<br>Localisation Network：<br>该网络就是一个简单的回归网络。将输入的图片进行几个卷积操作，然后全连接回归出6个角度值（假设是仿射变换），2*3的矩阵。【为什么是6个角度？】</p>
+<p>Grid generator：<br>网格生成器负责将V中的坐标位置，通过矩阵运算，计算出目标图V中的每个位置对应原图U中的坐标位置。即生成T(G)。</p>
+<p>这里的Grid采样过程，对于二维仿射变换（旋转，平移，缩放）来说，就是简单的矩阵运算。<br>上式中，s代表原始图的坐标，t代表目标图的坐标。A为Localisation Network网络回归出的6个角度值。</p>
+<p>整个Grid生成过程就是，首先你需要想象上图中V-FeatureMap中全是白色或者全是黑色，是没有像素信息的。也就是说V-FeatureMap还不存在，有的只是V-FeatureMap的坐标位置信息。然后将目标图V-FeatureMap中的比如（0，0）（0，1）……位置的坐标，与2*3变换矩阵运算。就会生成出在原始图中对应的坐标信息，比如（5，0）（5，1）……。这样所有的目标图的坐标都经过这样的运算就会将每个坐标都产生一个与之对应的原图的坐标，即T(G)。然后通过T(G)和原始图U-FeatureMap的像素，将原始图中的像素复制到V-FeatureMap中，从而生成目标图的像素。<br>【这步操作有点骚，为什么不生成从U到V的放射变换矩阵？】</p>
+<p>Sampler的存在使得STN可微。</p>
+<p>STN网络是一个CONV还是FC<br>这个网络会有几个隐层，这些隐层可以是全连接层，也可以是卷积层。<br>也就是说，STN是一种流程思想。</p>
+<p>这里没看明白。但后一层，需要做回归，因为要输出变换参数的值。</p>
+<p>参考资料<br>[1]<a href="https://blog.csdn.net/qq_39422642/article/details/78870629，此博客中的连接很有用。" target="_blank" rel="noopener">https://blog.csdn.net/qq_39422642/article/details/78870629，此博客中的连接很有用。</a><br><a href="https://blog.csdn.net/qq_14845119/article/details/79510714" target="_blank" rel="noopener">https://blog.csdn.net/qq_14845119/article/details/79510714</a></p>
+<h3 id="DPN"><a href="#DPN" class="headerlink" title="DPN"></a>DPN</h3><p>Baseline LR中的backward warp很有意思。有点STN中反step3的影子。</p>
+<p>发现自己的一个概念一直用错了。右图的视差dr，应用到左图，可以重建出右图。</p>
+<p>原文中说，输出四个不同尺度（disp4~disp1）的视差图，它们前者是后者的两倍。尽管只有单张输入图片，该网络能够输出不同尺度上的两个视差图——left-to-right 和 right-to-left。</p>
+<p>上面这张图是博客作者自己画的？反正没找到论文作者的版本。<br>网络输出两个视差图是毋庸置疑的，文章material awareness中示意图也说明了这点。<br>为什么能够输出两个视差图呢？</p>
+<p>参考资料：<br>这一篇是DPN的一个baseline LR <a href="http://yyliu.cn/post/750ec7f0.html" target="_blank" rel="noopener">http://yyliu.cn/post/750ec7f0.html</a><br>下面两篇是翻译：<br><a href="http://www.yyliu.cn/post/c68cf6db.html" target="_blank" rel="noopener">http://www.yyliu.cn/post/c68cf6db.html</a><br><a href="https://zhuanlan.zhihu.com/p/29528596" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/29528596</a><br>这篇是概括性解读+code<br><a href="https://blog.csdn.net/lvhao92/article/details/76586101" target="_blank" rel="noopener">https://blog.csdn.net/lvhao92/article/details/76586101</a></p>
+<h3 id="Deep-Material-aware-Cross-spectral-Stereo-Matching"><a href="#Deep-Material-aware-Cross-spectral-Stereo-Matching" class="headerlink" title="Deep Material-aware Cross-spectral Stereo Matching"></a>Deep Material-aware Cross-spectral Stereo Matching</h3><p>Introduction</p>
+<ul>
+<li>混合相机系统的align，如果使用Beam filter,会有长时间曝光造成blur.而使用stereo合一在align的同时获得depth</li>
+</ul>
+<p>【相当于初始化depth用的是dpn单目方式】</p>
+<ul>
+<li><p>作者让DPN只学深度，使用了symmetric的结构方式STN学习几何信息。</p>
+</li>
+<li><p>作者采集了数据集，并且自己label 了material segment进行train STN。</p>
+</li>
+</ul>
+<p>【看到这里作者的STN网络是不能借鉴了，猜测借鉴的部分还有wrap等】</p>
+<p>Related Work</p>
+<ul>
+<li><p>已有的交叉模态立体匹配方案只考虑了feature和region没有考虑material awareness</p>
+</li>
+<li><p>已有的非监督深度估计方案只考虑了RGB而没有考虑光谱，还有非漫发射。</p>
+</li>
+</ul>
+<p>【看到这里想到我们的方案是想让两路的图像尽可能接近</p>
+<p>采用类DPN方案：可以得到disparity–&gt;align–&gt;enhance(这里enhance与求disp有冲突吗？没有。)求disp的时候可以算一个loss，这个loss主体是||L’-L||_2+||R’-R||_2；enhance的时候loss主体是？？？Enhance需要找1、jiangzhu的论文2、今年CVPR陈畅师兄介绍的zero-shot增强的论文。3、思考数据集怎么做？我们是没有label的。】</p>
+<p>Simultaneous Disparity Estimation and Spectral Translation</p>
+<ul>
+<li><p>文字贼有意思，simultaneously to respectively learn disparity and spectral translation</p>
+</li>
+<li><p>看到他用STN把RGB合成pseudo NIR，我在考虑是否应该使用CNN来把spectral image转化为灰度图像。那么这里为什么不直接用光谱响应曲线呢？考虑如下：1、合成后的灰度图像并不很好。【其实两幅图像的拍摄角度不同，光线也不会一样，所以导致spectral image合成后的图像也并不会完全一样。但是这个差别是否可以忽略不计呢?】</p>
+</li>
+<li><p>reprojection error 重投影误差</p>
+</li>
+<li><p>出现了！出现了！使用STN进行transform(wrap)。。。吗【又看了一遍DPN后发现并不是，STN的作用：“在训练过程中，网络学习通过对相反的图片采样来生成图片。我们的成像模型，采用来自空间变形网络（spatial transformer network，STN），通过视差图对输入图像取样。STN采用双线性采样，它的输出像素是四个输入像素的权重相加 。与其他方法相比，双线性采样局部完全可微，无缝集成到我们的全卷积网络架构。意味着不需要单纯化或近似我们的损失函数。”】</p>
+</li>
+</ul>
+<h3 id="Spectral-Translation-Network"><a href="#Spectral-Translation-Network" class="headerlink" title="Spectral Translation Network"></a>Spectral Translation Network</h3><ul>
+<li><p>包括局部滤波，白平衡，曝光校正。</p>
+</li>
+<li><p>pseudo NIR 由RB白平衡G(\theta)和像素值F(\theta)加权得到。</p>
+<ul>
+<li>F(\theta)的权值由Filter Generating Network FGN学习得到。</li>
+</ul>
+</li>
+<li><p>FGN的结构和DPN一样。此处为了不让STN学习到disp信息，所以使用了一个left-right symmetric filtering kernels(symmetric CNN)，即FGN。FGN可以平等地对待左右图的每一个像素并且不对输入产生shift【这里symmetric cnn是什么，为什么可以不学到disp信息？为啥对称了就学不到了？】【STN除了FGN以外还有什么组成】</p>
+</li>
+</ul>
+<h3 id="Incorporating-Material-aware-Confidence-into-Disparity-Prediction-Network"><a href="#Incorporating-Material-aware-Confidence-into-Disparity-Prediction-Network" class="headerlink" title="Incorporating Material-aware Confidence into Disparity Prediction Network"></a>Incorporating Material-aware Confidence into Disparity Prediction Network</h3><ul>
+<li><p>提出一个问题：material awareness和disp prediction没有结合</p>
+</li>
+<li><p>解决方法：把material-aware confidence加到DPN loss中去。</p>
+</li>
+<li><p>方案1：把确定区域的disp传播到不确定性区域，（利用确定的disp求不确定的disp），为此，作者提出了一个新的confidence-weighted smoothing technique</p>
+</li>
+<li><p>方案2：改写DPN LOSS，增加material-specific alignment and smoothness losses</p>
+</li>
+<li><p>方案1+方案2.Done！</p>
+</li>
+<li><p>smooth是一种预测未知区域disp的方法（这么讲好有道理）</p>
+</li>
+<li><p>方案1：简单来说就是对unreliable区域的disp进行类插值预测。</p>
+</li>
+<li><p>方案2：改造DPN loss貌似很复杂，不看了。</p>
+</li>
+<li><p>随后作者举例说明怎么使用方案1 2 </p>
+<ul>
+<li>作者介绍了数据集</li>
+</ul>
+</li>
+</ul>
+<p>Experiment Result</p>
+<ul>
+<li><p>使用了Deeplab net进行fine-tune，用于 material awareness</p>
+</li>
+<li><p>本文的对比对象是   CMA/ ANCC/ DASC /SIFT FLOW/</p>
+</li>
+<li><p>ablation study</p>
+</li>
+</ul>
+<p>看到最后有个问题，本文中DPN的输入为什么会画成两个输入的形式？<br>并且输出为两个disp。这里的问题还是original 的DPN没有搞清楚。</p>
+<hr>
+<p>20180917再次阅读。</p>
+<p>主要阅读method部分。追求技术细节。</p>
+<p>首先，DPN的作用是求视差，这里没有问题。关于其约束，使用了重投影误差，查了一下重投影误差并没太仔细看，觉得这里可以先简单理解为左右一致性。其loss设置的比较复杂，但感觉基本就第一项在起作用。</p>
+<p>考虑其训练过程和测试过程。</p>
+
+      
+    </div>
+    
+    
+    
+    <div>
+      
+        
+
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/论文笔记/" rel="tag"><i class="fa fa-tag"></i> 论文笔记</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/22/github+hexo.html" rel="next" title="5分钟利用Github+Hexo搭建个人博客!">
+                <i class="fa fa-chevron-left"></i> 5分钟利用Github+Hexo搭建个人博客!
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/22/Enhancing_the_Spatial_Resolution_of_Stereo_Images_using_Parallax_Prior.html" rel="prev" title="论文笔记：Enhancing the Spatial Resolution of Stereo Images using Parallax Prior">
+                论文笔记：Enhancing the Spatial Resolution of Stereo Images using Parallax Prior <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTI0OS8xMTc4NQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/spongebob_72px_1066516_easyicon.net.png" alt="Heres-y">
+            
+              <p class="site-author-name" itemprop="name">Heres-y</p>
+              <p class="site-description motion-element" itemprop="description">Looking for your reply~</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Enhancing-the-Spatial-Resolution-of-Stereo-Images-using-Parallax-Prior"><span class="nav-number">1.</span> <span class="nav-text">Enhancing the Spatial Resolution of Stereo Images using Parallax Prior</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STN"><span class="nav-number">2.</span> <span class="nav-text">STN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DPN"><span class="nav-number">3.</span> <span class="nav-text">DPN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deep-Material-aware-Cross-spectral-Stereo-Matching"><span class="nav-number">4.</span> <span class="nav-text">Deep Material-aware Cross-spectral Stereo Matching</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spectral-Translation-Network"><span class="nav-number">5.</span> <span class="nav-text">Spectral Translation Network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Incorporating-Material-aware-Confidence-into-Disparity-Prediction-Network"><span class="nav-number">6.</span> <span class="nav-text">Incorporating Material-aware Confidence into Disparity Prediction Network</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2018-2019 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Heres-y</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共22.7k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("9gpwAmnhmeC73AUKxHmRNXsO-gzGzoHsz", "8rA7nL0CFFFlqm6k6BIo48ib");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook,Evernote,GooglePlus";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":"hijiki","bottom":-30,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end --></body>
+</html>
