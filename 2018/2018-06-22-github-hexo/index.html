@@ -303,15 +303,15 @@
 <li><input disabled="" type="checkbox"> .git等文件仍需调整。</li>
 <li><input checked="" disabled="" type="checkbox"> 公式问题。</li>
 </ul>
-<h3 id="20220709"><a href="#20220709" class="headerlink" title="20220709"></a>20220709</h3><p>npm出现np audit fix问题。解决方法：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/ljh101/article/details/117115418?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1-117115418-blog-107384838.pc_relevant_multi_platform_whitelistv1&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1-117115418-blog-107384838.pc_relevant_multi_platform_whitelistv1&utm_relevant_index=1">npm安装时出现run <code>npm audit fix</code> to fix them, or <code>npm audit</code> for details彻底解决的办法</a></p>
+<h3 id="20220709"><a href="#20220709" class="headerlink" title="20220709"></a>20220709</h3><p>1、npm出现np audit fix问题。解决方法：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/ljh101/article/details/117115418?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1-117115418-blog-107384838.pc_relevant_multi_platform_whitelistv1&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1-117115418-blog-107384838.pc_relevant_multi_platform_whitelistv1&utm_relevant_index=1">npm安装时出现run <code>npm audit fix</code> to fix them, or <code>npm audit</code> for details彻底解决的办法</a></p>
 <blockquote>
 <p>真正解决方案：<br>删除node_modules 目录 和 package-lock.json文件重新执行以下指令即可，全程畅通无阻</p>
 <p>npm install –no-fund –no-audit</p>
 <p>想知道这两个选项的详情信息？</p>
 </blockquote>
 <p>npm help install </p>
-<p>如果要增加Butterfly主题，需要<br><code>npm install --save hexo-renderer-jade hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive </code></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ac1992122633/article/details/123764075">优化归档结构</a><br>为了利于百度、谷歌等搜索引擎的爬虫，需要将站点文章目录结构优化为三级以内</p>
+<p>2、如果要增加Butterfly主题，需要<br><code>npm install --save hexo-renderer-jade hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive </code></p>
+<p>3、<a target="_blank" rel="noopener" href="https://blog.csdn.net/ac1992122633/article/details/123764075">优化归档结构</a><br>为了利于百度、谷歌等搜索引擎的爬虫，需要将站点文章目录结构优化为三级以内</p>
 <p><code>npm install hexo-abbrlink --save</code></p>
 <p>修改原有站点配置</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># permalink: :year/:month/:day/:title/</span><br><span class="line">permalink: posts/:abbrlink/</span><br></pre></td></tr></table></figure>
@@ -320,12 +320,14 @@
 
 
 <p>之后每次hexo g后会在每篇文章的front matter中生成abbrlink节点</p>
-<p>生成站点地图</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br><span class="line">npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure>
-
-<p> 中文转拼音<br>地址 <a target="_blank" rel="noopener" href="https://github.com/viko16/hexo-permalink-pinyin">https://github.com/viko16/hexo-permalink-pinyin</a></p>
+<p>4、中文转拼音<br>地址 <a target="_blank" rel="noopener" href="https://github.com/viko16/hexo-permalink-pinyin">https://github.com/viko16/hexo-permalink-pinyin</a></p>
 <p>npm i hexo-permalink-pinyin –save<br>然后在站点根目录设置</p>
 <p>permalink_pinyin:<br>  enable: true #是否开启<br>  separator: ‘-‘   # default: ‘-‘链接符</p>
+<p>5、hexo-butterfly-SEO优化 （<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2023063%EF%BC%89">https://cloud.tencent.com/developer/article/2023063）</a><br>1.网站收录<br>网站收录主要包括网站验证、链接提交两个核心步骤，此外还可扩展自动推送、robots、rel配置</p>
+<p> hexo项目插件引入：生成站点地图</p>
+<p>分为手动提交和自动提交，此处采用sitemap方式自动提交</p>
+<p>引入组件生成站点地图<br>npm install hexo-generator-seo-friendly-sitemap –save</p>
+<p>hexo sitemap配置网站地图(在hexo站的_config.yml文件添加配置)<br>sitemap:<br>    path: sitemap.xml # 索引地图路径<br>    tag: false # 标签页不添加到网站地图中<br>    category: false # 分类页不添加到网站地图中</p>
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>[1] <a target="_blank" rel="noopener" href="https://www.haomwei.com/technology/maupassant-hexo.html">大道至简——Hexo简洁主题推荐</a></p>
 <p>[2]<a target="_blank" rel="noopener" href="https://neveryu.github.io/2016/09/30/hexo-next-two/#5-%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E5%B0%8F%E7%BA%A2%E5%BF%83%E7%9A%84%E8%AE%BE%E7%BD%AE">Hexo-NexT搭建个人博客（二）</a></p>
 <p>[3]<a target="_blank" rel="noopener" href="https://dingxuewen.com/2017/03/03/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE%E4%BA%8C/">Hexo 搭建博客的个性化设置二</a></p>

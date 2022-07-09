@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mdyao.github.io/2018/2018-03-27-hello-hexo/</loc>
+    
+    <lastmod>2018-03-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mdyao.github.io/2020/paper-202001-pirm2018challenge/</loc>
+    
+    <lastmod>2020-01-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mdyao.github.io/2019/2019-04-15-valse2019/</loc>
     
     <lastmod>2019-04-15</lastmod>
@@ -101,27 +119,9 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2018/2018-03-27-hello-hexo/</loc>
-    
-    <lastmod>2018-03-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://mdyao.github.io/2018/2018-11-16-cuda/</loc>
     
     <lastmod>2018-11-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mdyao.github.io/2018/2018-11-24-opengl/</loc>
-    
-    <lastmod>2018-11-24</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -137,16 +137,16 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-201906-spectral/</loc>
+    <loc>https://mdyao.github.io/2018/2018-11-24-opengl/</loc>
     
-    <lastmod>2019-06-25</lastmod>
+    <lastmod>2018-11-24</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-201906-sr/</loc>
+    <loc>https://mdyao.github.io/2019/paper-201906-spectral/</loc>
     
     <lastmod>2019-06-25</lastmod>
     
@@ -164,18 +164,18 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-201910-rgb-to-d/</loc>
+    <loc>https://mdyao.github.io/2019/paper-201906-sr/</loc>
     
-    <lastmod>2019-10-28</lastmod>
+    <lastmod>2019-06-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-201911-deep-blind-hyperspectral-image-fusion/</loc>
+    <loc>https://mdyao.github.io/2019/paper-201910-rgb-to-d/</loc>
     
-    <lastmod>2019-11-28</lastmod>
+    <lastmod>2019-10-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -191,18 +191,18 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-201911-pro-cam-ssfm-projector-camera-system-for-structure-and-spectral-reflectance-from-motion/</loc>
+    <loc>https://mdyao.github.io/2019/paper-201911-deep-blind-hyperspectral-image-fusion/</loc>
     
-    <lastmod>2019-11-30</lastmod>
+    <lastmod>2019-11-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2020/paper-202001-pirm2018challenge/</loc>
+    <loc>https://mdyao.github.io/2019/paper-201911-pro-cam-ssfm-projector-camera-system-for-structure-and-spectral-reflectance-from-motion/</loc>
     
-    <lastmod>2020-01-10</lastmod>
+    <lastmod>2019-11-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -245,36 +245,9 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2018/paper-psm-net/</loc>
-    
-    <lastmod>2018-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://mdyao.github.io/2019/paper-multispectral-and-hyperspectral-image-fusion-by-mshs-fusion-net-cvpr-2019/</loc>
     
     <lastmod>2019-06-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mdyao.github.io/2018/paper-sr-summary/</loc>
-    
-    <lastmod>2018-11-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mdyao.github.io/2019/paper-uemori-skin-based-identification-from-multispectral-image-data-using-cnns-cvpr-2019/</loc>
-    
-    <lastmod>2019-06-21</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -290,6 +263,33 @@
   </url>
   
   <url>
+    <loc>https://mdyao.github.io/2018/paper-sr-summary/</loc>
+    
+    <lastmod>2018-11-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mdyao.github.io/2018/paper-psm-net/</loc>
+    
+    <lastmod>2018-10-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mdyao.github.io/2019/paper-uemori-skin-based-identification-from-multispectral-image-data-using-cnns-cvpr-2019/</loc>
+    
+    <lastmod>2019-06-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mdyao.github.io/2018/paper-zoom-and-learn/</loc>
     
     <lastmod>2018-10-22</lastmod>
@@ -299,18 +299,18 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2018/yi-xie-lun-wen-yue-du-bi-ji/</loc>
+    <loc>https://mdyao.github.io/2018/paper-monodepth/</loc>
     
-    <lastmod>2018-06-23</lastmod>
+    <lastmod>2018-11-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2018/paper-monodepth/</loc>
+    <loc>https://mdyao.github.io/2018/yi-xie-lun-wen-yue-du-bi-ji/</loc>
     
-    <lastmod>2018-11-07</lastmod>
+    <lastmod>2018-06-23</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -335,18 +335,18 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/tags/index.html</loc>
+    <loc>https://mdyao.github.io/guestbook/index.html</loc>
     
-    <lastmod>2018-03-31</lastmod>
+    <lastmod>2019-06-18</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/guestbook/index.html</loc>
+    <loc>https://mdyao.github.io/tags/index.html</loc>
     
-    <lastmod>2019-06-18</lastmod>
+    <lastmod>2018-03-31</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -360,20 +360,6 @@
     <priority>1.0</priority>
   </url>
 
-  
-  <url>
-    <loc>https://mdyao.github.io/tags/MATLAB/</loc>
-    <lastmod>2022-07-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mdyao.github.io/tags/XJBX/</loc>
-    <lastmod>2022-07-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
   
   <url>
     <loc>https://mdyao.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</loc>
@@ -390,7 +376,28 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/tags/linux/</loc>
+    <loc>https://mdyao.github.io/tags/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2022-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://mdyao.github.io/tags/%E6%B7%B1%E5%BA%A6%E4%BF%A1%E6%81%AF/</loc>
+    <lastmod>2022-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://mdyao.github.io/tags/XJBX/</loc>
+    <lastmod>2022-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://mdyao.github.io/tags/MATLAB/</loc>
     <lastmod>2022-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -398,6 +405,13 @@
   
   <url>
     <loc>https://mdyao.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2022-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://mdyao.github.io/tags/linux/</loc>
     <lastmod>2022-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -412,20 +426,6 @@
   
   <url>
     <loc>https://mdyao.github.io/tags/OpenGL/</loc>
-    <lastmod>2022-07-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mdyao.github.io/tags/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2022-07-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mdyao.github.io/tags/%E6%B7%B1%E5%BA%A6%E4%BF%A1%E6%81%AF/</loc>
     <lastmod>2022-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -476,14 +476,14 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/categories/linux/</loc>
+    <loc>https://mdyao.github.io/categories/hexo/</loc>
     <lastmod>2022-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/categories/hexo/</loc>
+    <loc>https://mdyao.github.io/categories/linux/</loc>
     <lastmod>2022-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
