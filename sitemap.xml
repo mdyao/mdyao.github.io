@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mdyao.github.io/2018/2018-03-27-hello-hexo/</loc>
+    
+    <lastmod>2018-03-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mdyao.github.io/2020/paper-202001-pirm2018challenge/</loc>
+    
+    <lastmod>2020-01-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mdyao.github.io/2019/2019-04-15-valse2019/</loc>
     
     <lastmod>2019-04-15</lastmod>
@@ -101,15 +119,6 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2018/2018-03-27-hello-hexo/</loc>
-    
-    <lastmod>2018-03-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://mdyao.github.io/2018/2018-11-24-opengl/</loc>
     
     <lastmod>2018-11-24</lastmod>
@@ -155,15 +164,6 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-201910-rgb-to-d/</loc>
-    
-    <lastmod>2019-10-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://mdyao.github.io/2019/paper-201910-extreme-view-synthesis/</loc>
     
     <lastmod>2019-10-14</lastmod>
@@ -173,9 +173,9 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-201911-deep-blind-hyperspectral-image-fusion/</loc>
+    <loc>https://mdyao.github.io/2019/paper-201910-rgb-to-d/</loc>
     
-    <lastmod>2019-11-28</lastmod>
+    <lastmod>2019-10-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -191,27 +191,18 @@
   </url>
   
   <url>
+    <loc>https://mdyao.github.io/2019/paper-201911-deep-blind-hyperspectral-image-fusion/</loc>
+    
+    <lastmod>2019-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mdyao.github.io/2019/paper-201911-pro-cam-ssfm-projector-camera-system-for-structure-and-spectral-reflectance-from-motion/</loc>
     
     <lastmod>2019-11-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mdyao.github.io/2019/paper-hyperspectral-image-reconstruction-using-a-deep-spatial-spectral-prior-cvpr-2019/</loc>
-    
-    <lastmod>2019-06-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mdyao.github.io/2020/paper-202001-pirm2018challenge/</loc>
-    
-    <lastmod>2020-01-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -227,9 +218,9 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-multispectral-imaging-for-fine-grained-recognition-of-powders-on-complex-backgrounds-cvpr-2019/</loc>
+    <loc>https://mdyao.github.io/2019/paper-hyperspectral-image-reconstruction-using-a-deep-spatial-spectral-prior-cvpr-2019/</loc>
     
-    <lastmod>2019-06-24</lastmod>
+    <lastmod>2019-06-18</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -245,18 +236,18 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-multispectral-and-hyperspectral-image-fusion-by-mshs-fusion-net-cvpr-2019/</loc>
+    <loc>https://mdyao.github.io/2019/paper-multispectral-imaging-for-fine-grained-recognition-of-powders-on-complex-backgrounds-cvpr-2019/</loc>
     
-    <lastmod>2019-06-19</lastmod>
+    <lastmod>2019-06-24</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2018/paper-psm-net/</loc>
+    <loc>https://mdyao.github.io/2019/paper-multispectral-and-hyperspectral-image-fusion-by-mshs-fusion-net-cvpr-2019/</loc>
     
-    <lastmod>2018-10-18</lastmod>
+    <lastmod>2019-06-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -272,6 +263,15 @@
   </url>
   
   <url>
+    <loc>https://mdyao.github.io/2018/paper-psm-net/</loc>
+    
+    <lastmod>2018-10-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mdyao.github.io/2019/paper-uemori-skin-based-identification-from-multispectral-image-data-using-cnns-cvpr-2019/</loc>
     
     <lastmod>2019-06-21</lastmod>
@@ -281,18 +281,18 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2018/paper-zoom-and-learn/</loc>
+    <loc>https://mdyao.github.io/2019/paper-zhao-spectral-reconstruction-from-dispersive-blur-a-novel-light-efficient-spectral-cvpr-2019/</loc>
     
-    <lastmod>2018-10-22</lastmod>
+    <lastmod>2019-06-23</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-zhao-spectral-reconstruction-from-dispersive-blur-a-novel-light-efficient-spectral-cvpr-2019/</loc>
+    <loc>https://mdyao.github.io/2018/paper-zoom-and-learn/</loc>
     
-    <lastmod>2019-06-23</lastmod>
+    <lastmod>2018-10-22</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -317,9 +317,9 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/guestbook/index.html</loc>
+    <loc>https://mdyao.github.io/about/index.html</loc>
     
-    <lastmod>2019-06-18</lastmod>
+    <lastmod>2018-03-31</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -335,9 +335,9 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/about/index.html</loc>
+    <loc>https://mdyao.github.io/guestbook/index.html</loc>
     
-    <lastmod>2018-03-31</lastmod>
+    <lastmod>2019-06-18</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
