@@ -119,18 +119,18 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2018/2018-11-24-opengl/</loc>
+    <loc>https://mdyao.github.io/2018/2018-11-16-cuda/</loc>
     
-    <lastmod>2018-11-24</lastmod>
+    <lastmod>2018-11-16</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2018/2018-11-16-cuda/</loc>
+    <loc>https://mdyao.github.io/2018/2018-11-24-opengl/</loc>
     
-    <lastmod>2018-11-16</lastmod>
+    <lastmod>2018-11-24</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -227,18 +227,18 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-hyperspectral-image-super-resolution-with-optimized-rgb-guidance-cvpr-2019/</loc>
+    <loc>https://mdyao.github.io/2019/paper-multispectral-imaging-for-fine-grained-recognition-of-powders-on-complex-backgrounds-cvpr-2019/</loc>
     
-    <lastmod>2019-06-19</lastmod>
+    <lastmod>2019-06-24</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-multispectral-imaging-for-fine-grained-recognition-of-powders-on-complex-backgrounds-cvpr-2019/</loc>
+    <loc>https://mdyao.github.io/2019/paper-hyperspectral-image-super-resolution-with-optimized-rgb-guidance-cvpr-2019/</loc>
     
-    <lastmod>2019-06-24</lastmod>
+    <lastmod>2019-06-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -254,18 +254,18 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2018/paper-sr-summary/</loc>
+    <loc>https://mdyao.github.io/2018/paper-psm-net/</loc>
     
-    <lastmod>2018-11-07</lastmod>
+    <lastmod>2018-10-18</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2018/paper-psm-net/</loc>
+    <loc>https://mdyao.github.io/2018/paper-sr-summary/</loc>
     
-    <lastmod>2018-10-18</lastmod>
+    <lastmod>2018-11-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -290,18 +290,18 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2018/paper-zoom-and-learn/</loc>
+    <loc>https://mdyao.github.io/2018/paper-monodepth/</loc>
     
-    <lastmod>2018-10-22</lastmod>
+    <lastmod>2018-11-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2018/paper-monodepth/</loc>
+    <loc>https://mdyao.github.io/2018/paper-zoom-and-learn/</loc>
     
-    <lastmod>2018-11-07</lastmod>
+    <lastmod>2018-10-22</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -326,7 +326,7 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/categories/index.html</loc>
+    <loc>https://mdyao.github.io/tags/index.html</loc>
     
     <lastmod>2018-03-31</lastmod>
     
@@ -344,7 +344,7 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/tags/index.html</loc>
+    <loc>https://mdyao.github.io/categories/index.html</loc>
     
     <lastmod>2018-03-31</lastmod>
     
@@ -418,14 +418,14 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/tags/OpenGL/</loc>
+    <loc>https://mdyao.github.io/tags/CUDA/</loc>
     <lastmod>2022-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/tags/CUDA/</loc>
+    <loc>https://mdyao.github.io/tags/OpenGL/</loc>
     <lastmod>2022-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -490,14 +490,14 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/categories/OpenGL/</loc>
+    <loc>https://mdyao.github.io/categories/CUDA/</loc>
     <lastmod>2022-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/categories/CUDA/</loc>
+    <loc>https://mdyao.github.io/categories/OpenGL/</loc>
     <lastmod>2022-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
