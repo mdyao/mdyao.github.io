@@ -146,15 +146,6 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-201906-sr/</loc>
-    
-    <lastmod>2019-06-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://mdyao.github.io/2019/paper-201906-spectral/</loc>
     
     <lastmod>2019-06-25</lastmod>
@@ -164,9 +155,9 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-201910-rgb-to-d/</loc>
+    <loc>https://mdyao.github.io/2019/paper-201906-sr/</loc>
     
-    <lastmod>2019-10-28</lastmod>
+    <lastmod>2019-06-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -182,9 +173,9 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-201910-stereo-magnification-using-mpi/</loc>
+    <loc>https://mdyao.github.io/2019/paper-201910-rgb-to-d/</loc>
     
-    <lastmod>2019-10-10</lastmod>
+    <lastmod>2019-10-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -200,18 +191,18 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-201911-pro-cam-ssfm-projector-camera-system-for-structure-and-spectral-reflectance-from-motion/</loc>
+    <loc>https://mdyao.github.io/2019/paper-201910-stereo-magnification-using-mpi/</loc>
     
-    <lastmod>2019-11-30</lastmod>
+    <lastmod>2019-10-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-hyperspectral-image-reconstruction-using-a-deep-spatial-spectral-prior-cvpr-2019/</loc>
+    <loc>https://mdyao.github.io/2019/paper-201911-pro-cam-ssfm-projector-camera-system-for-structure-and-spectral-reflectance-from-motion/</loc>
     
-    <lastmod>2019-06-18</lastmod>
+    <lastmod>2019-11-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -227,16 +218,16 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-hyperspectral-image-super-resolution-with-optimized-rgb-guidance-cvpr-2019/</loc>
+    <loc>https://mdyao.github.io/2019/paper-hyperspectral-image-reconstruction-using-a-deep-spatial-spectral-prior-cvpr-2019/</loc>
     
-    <lastmod>2019-06-19</lastmod>
+    <lastmod>2019-06-18</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2019/paper-multispectral-and-hyperspectral-image-fusion-by-mshs-fusion-net-cvpr-2019/</loc>
+    <loc>https://mdyao.github.io/2019/paper-hyperspectral-image-super-resolution-with-optimized-rgb-guidance-cvpr-2019/</loc>
     
     <lastmod>2019-06-19</lastmod>
     
@@ -248,6 +239,15 @@
     <loc>https://mdyao.github.io/2019/paper-multispectral-imaging-for-fine-grained-recognition-of-powders-on-complex-backgrounds-cvpr-2019/</loc>
     
     <lastmod>2019-06-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mdyao.github.io/2019/paper-multispectral-and-hyperspectral-image-fusion-by-mshs-fusion-net-cvpr-2019/</loc>
+    
+    <lastmod>2019-06-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -281,15 +281,6 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2018/paper-zoom-and-learn/</loc>
-    
-    <lastmod>2018-10-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://mdyao.github.io/2019/paper-zhao-spectral-reconstruction-from-dispersive-blur-a-novel-light-efficient-spectral-cvpr-2019/</loc>
     
     <lastmod>2019-06-23</lastmod>
@@ -299,9 +290,9 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/2018/yi-xie-lun-wen-yue-du-bi-ji/</loc>
+    <loc>https://mdyao.github.io/2018/paper-zoom-and-learn/</loc>
     
-    <lastmod>2018-06-23</lastmod>
+    <lastmod>2018-10-22</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -317,18 +308,9 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/guestbook/index.html</loc>
+    <loc>https://mdyao.github.io/2018/yi-xie-lun-wen-yue-du-bi-ji/</loc>
     
-    <lastmod>2019-06-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mdyao.github.io/about/index.html</loc>
-    
-    <lastmod>2018-03-31</lastmod>
+    <lastmod>2018-06-23</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -344,7 +326,25 @@
   </url>
   
   <url>
+    <loc>https://mdyao.github.io/guestbook/index.html</loc>
+    
+    <lastmod>2019-06-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mdyao.github.io/tags/index.html</loc>
+    
+    <lastmod>2018-03-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mdyao.github.io/about/index.html</loc>
     
     <lastmod>2018-03-31</lastmod>
     
@@ -390,13 +390,6 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/tags/MATLAB/</loc>
-    <lastmod>2022-07-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://mdyao.github.io/tags/XJBX/</loc>
     <lastmod>2022-07-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -404,7 +397,7 @@
   </url>
   
   <url>
-    <loc>https://mdyao.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://mdyao.github.io/tags/MATLAB/</loc>
     <lastmod>2022-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -412,6 +405,13 @@
   
   <url>
     <loc>https://mdyao.github.io/tags/linux/</loc>
+    <lastmod>2022-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://mdyao.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2022-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
