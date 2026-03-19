@@ -486,11 +486,12 @@ ol {
 
 <body>
   <ol id="nav">
-    <li><a href="#home" title="Home">Home</a></li>
-    <li><a href="#research" title="Research">Research</a></li>
-    <li><a href="#news" title="News">News</a></li>
-    <li><a href="#pub" title="Papers">Papers</a></li>
-    <li><a href="mailto:mingdeyao@foxmail.com" title="Contact">Contact</a></li>
+    <li><a id="nav-home" href="#home" title="Home">Home</a></li>
+    <li><a id="nav-research" href="#research" title="Research">Research</a></li>
+    <li><a id="nav-news" href="#news" title="News">News</a></li>
+    <li><a id="nav-papers" href="#pub" title="Papers">Papers</a></li>
+    <li><a id="nav-contact" href="mailto:mingdeyao@foxmail.com" title="Contact">Contact</a></li>
+    <li><a id="lang-toggle" href="javascript:void(0)" title="Switch Language">中文</a></li>
   </ol>
 <a name="home"></a>
 <div style="margin-bottom: 1em; border: 1px solid #ddd; background-color: #fff; padding: 1em; height: 140px;">
@@ -520,20 +521,20 @@ ol {
 <div style="clear: both;">
 <div class="section">
 <!-- <h2>(<a href='https://scholar.google.com/citations?user=kWADCMUAAAAJ&hl=zh-CN'>Google scholar</a>)</h2> -->
-<h2>About Me</h2>
+<h2 id="about-title">About Me</h2>
 <div class="bio">
 
 
 
-Currently, I am a Postdoctoral Researcher at  Multimedia Laboratory (MMLab), <a href="https://www.cuhk.edu.hk/">The Chinese University of Hong Kong (CUHK)</a>, advised by Prof. <a href="https://tianfan.info/">Tianfan Xue</a>, Prof. <a href="https://www.gujinwei.org/">Jinwei Gu</a> and Prof. <a href="https://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a>. Before that, I obtained my Ph.D. degree from <a href="http://en.ustc.edu.cn/">University of Science and Technology of China (USTC)</a> in 2023, advised by Prof. <a href="http://staff.ustc.edu.cn/~zwxiong/">Zhiwei Xiong</a>. I obtained my B. Eng. degree in the Department of Automation (Lang Shijun Honors Class) from Northeastern University, China, in 2018.
+<span id="about-intro">Currently, I am a Postdoctoral Researcher at  Multimedia Laboratory (MMLab), <a href="https://www.cuhk.edu.hk/">The Chinese University of Hong Kong (CUHK)</a>, advised by Prof. <a href="https://tianfan.info/">Tianfan Xue</a>, Prof. <a href="https://www.gujinwei.org/">Jinwei Gu</a> and Prof. <a href="https://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a>. Before that, I obtained my Ph.D. degree from <a href="http://en.ustc.edu.cn/">University of Science and Technology of China (USTC)</a> in 2023, advised by Prof. <a href="http://staff.ustc.edu.cn/~zwxiong/">Zhiwei Xiong</a>. I obtained my B. Eng. degree in the Department of Automation (Lang Shijun Honors Class) from Northeastern University, China, in 2018.</span>
 
 <br><br>
 
-My research interests broadly lie in the areas of <i><strong style="color:Brown;">Agentic AI</strong></i>, <i><strong style="color:Brown;">deep generative models</strong></i>, <i><strong style="color:Brown;">computational photography</strong></i>, and general fields of computer vision and machine learning. 
+<span id="about-research">My research interests broadly lie in the areas of <i><strong style="color:Brown;">Agentic AI</strong></i>, <i><strong style="color:Brown;">deep generative models</strong></i>, <i><strong style="color:Brown;">computational photography</strong></i>, and general fields of computer vision and machine learning.</span> 
 
 <br><br>
 
-<p><strong style="font-size:16px; color:DarkBlue;">I am always open to collaborations and discussions!</strong> If you are interested in my research or have any ideas to share, feel free to
+<p id="about-collab"><strong style="font-size:16px; color:DarkBlue;">I am always open to collaborations and discussions!</strong> If you are interested in my research or have any ideas to share, feel free to
   <a href="mailto:mingdeyao@foxmail.com" style="color:Brown;">
     <i class="fas fa-envelope" style="margin-right: 5px;"></i>reach out</a>.</p>
 
@@ -552,16 +553,16 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
 <a name="news"></a>
 <div style="clear: both;">
 <div class="section">
-  <h2>Updates</h2>
+  <h2 id="updates-title">Updates</h2>
   <div class="paper">
     <ul>
 
       <li>
         <a class="button" href="#" style="color:#FFA500">
-          <strong style="font-size:16px">New</strong>
+          <strong id="news-tag-1" style="font-size:16px">New</strong>
         </a> 
         <strong style="padding-left:5px;">03/2026: </strong>
-        <em> Two papers are accepted to 
+        <em id="news-item-1"> Two papers are accepted to 
           <strong>
             <a href="https://cvpr.thecvf.com/" style="color:DarkRed;">
               CVPR 2026.
@@ -572,10 +573,10 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
 
       <li>
         <a class="button" href="#" style="color:#FFA500">
-          <strong style="font-size:16px">New</strong>
+          <strong id="news-tag-2" style="font-size:16px">New</strong>
         </a> 
         <strong style="padding-left:5px;">01/2026: </strong>
-        <em> Two papers are accepted to 
+        <em id="news-item-2"> Two papers are accepted to 
           <strong>
             <a href="https://iclr.cc/" style="color:DarkRed;">
               ICLR 2026.
@@ -586,7 +587,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
 
       <li>
         <strong style="padding-left:5px;">09/2025: </strong>
-        <em> One paper is accepted to 
+        <em id="news-item-3"> One paper is accepted to 
           <strong>
             <a href="https://neurips.cc/" style="color:DarkRed;">
               NeurIPS 2025.
@@ -598,7 +599,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
 
       <li>
         <strong style="padding-left:5px;">08/2025: </strong>
-        <em> One paper is accepted by 
+        <em id="news-item-4"> One paper is accepted by 
           <strong>
             <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=83/" style="color:DarkRed;">
               T-IP.
@@ -609,7 +610,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
 
       <li>
         <strong style="padding-left:5px;">06/2025: </strong>
-        <em> One paper is accepted to 
+        <em id="news-item-5"> One paper is accepted to 
           <strong>
             <a href="https://iccv.thecvf.com/" style="color:DarkRed;">
               ICCV 2025.
@@ -621,7 +622,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
 
       <li>
         <strong style="padding-left:5px;">03/2025: </strong>
-        <em> One paper is accepted by 
+        <em id="news-item-6"> One paper is accepted by 
           <strong>
             <a href="https://www.sciencedirect.com/journal/information-fusion/" style="color:DarkRed;">
               Information Fusion.
@@ -632,7 +633,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
 
       <li>
         <strong style="padding-left:5px;">03/2025: </strong>
-        <em> One paper for 
+        <em id="news-item-7"> One paper for 
           <a href="https://mdyao.github.io/PolarFree/" style="color:Brown;">
             <strong><i><u>Polarization-based Reflection-Free Imaging</u></i></strong>
           </a> is accepted to 
@@ -656,7 +657,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
 
 <a name="pub"></a>
 <div class="pub-head">
-  <h2 id="confpapers">Selected Publications [ <a href="https://scholar.google.com/citations?user=fsE3MzwAAAAJ&hl=en">Full List</a> ] </h2>
+  <h2 id="confpapers"><span id="pub-title-text">Selected Publications</span> [ <a id="pub-full-list-link" href="https://scholar.google.com/citations?user=fsE3MzwAAAAJ&hl=en">Full List</a> ] </h2>
   <button class="pub-all-toggle" id="pub-toggle-all" type="button">Collapse All</button>
 </div>
 <div class="pub-view-switch">
@@ -678,7 +679,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
 
     <div class="pub-group" id="group-agentic">
       <div class="pub-group-header">
-        <h3 class="pub-group-title">Agentic & Generative AI</h3>
+        <h3 class="pub-group-title" id="group-title-agentic">Agentic & Generative AI</h3>
         <button class="pub-group-toggle" type="button" aria-expanded="true">Collapse</button>
       </div>
       <div class="pub-group-content">
@@ -692,7 +693,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
         <a><b>PhotoAgent: Agentic Photo Editing with Exploratory Visual Aesthetic Planning</b></a><br />
         <u><b style="color:darkred">Mingde Yao</b></u>, Zhiyuan You, King-Man Tam, Menglu Wang, and Tianfan Xue.<br />
         <i>arXiv Preprint<b><font color="DarkRed"></font></b>, 2026</i><br />
-        <span style="color:#333; font-size:14px;">An <b style="color:#b00;">autonomous photo editing agent</b> that performs multi-step aesthetic planning and refinement to transform images with minimal user input.</span><br />
+        <span id="desc-photoagent" style="color:#333; font-size:14px;">An <b style="color:#b00;">autonomous photo editing agent</b> that performs multi-step aesthetic planning and refinement to transform images with minimal user input.</span><br />
         [ <a href='https://arxiv.org/pdf/2602.22809'>PDF</a> ]
         [ <a href='https://mdyao.github.io/PhotoAgent/'>Project page</a> ]
         [ <a href='https://github.com/mdyao/PhotoAgent'>Code</a> ]
@@ -706,7 +707,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
         <a><b>Group Critical-token Policy Optimization for Autoregressive Image Generation</b></a><br />
         Guohui Zhang, Hu Yu, Xiaoxiao Ma, Jinghao Zhang, Yaning Pan, <u><b style="color:darkred">Mingde Yao</b></u>, Jie Xiao, Linjiang Huang, and Feng Zhao.<br />
         <i>International Conference on Learning Representations <b><font color="DarkRed">(ICLR)</font></b>, 2026</i><br />
-        <span style="color:#333; font-size:14px;">A token-critical <b style="color:#b00;">RLVR</b> method for autoregressive image generation that selects <b style="color:#b00;">key tokens (30%)</b> for optimization, outperforming full-token baselines.</span><br />
+        <span id="desc-gcpo" style="color:#333; font-size:14px;">A token-critical <b style="color:#b00;">RLVR</b> method for autoregressive image generation that selects <b style="color:#b00;">key tokens (30%)</b> for optimization, outperforming full-token baselines.</span><br />
         [ <a href='https://arxiv.org/abs/2509.22485'>arXiv</a> ]
       </div>
       <div class="spanner"></div>
@@ -718,7 +719,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
         <a><b>InstantRetouch: Efficient and High-Fidelity Instruction-Guided Image Retouching with Bilateral Space</b></a><br />
         Jiarui Wu, Yujin Wang, Ruikang Li, Fan Zhang, <u><b style="color:darkred">Mingde Yao</b></u>, and Tianfan Xue.<br />
         <i>IEEE/CVF Conference on Computer Vision and Pattern Recognition <b><font color="DarkRed">(CVPR)</font></b>, 2026</i><br />
-        <span style="color:#333; font-size:14px;">A one-step bilateral grid retouching model delivering <b style="color:#b00;">70–900× speedup</b>, eliminating content drift, and preserving high-fidelity edits.</span><br />
+        <span id="desc-instantretouch" style="color:#333; font-size:14px;">A one-step bilateral grid retouching model delivering <b style="color:#b00;">70–900× speedup</b>, eliminating content drift, and preserving high-fidelity edits.</span><br />
         [ <a href='https://gnwekge78707.github.io/papers/DistilledBilateral___CVPR_2026__arxiv_.pdf'>PDF</a> ]
       </div>
       <div class="spanner"></div>
@@ -734,7 +735,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
         <a><b>HDR Image Generation via Gain Map Decomposed Diffusion</b></a><br />
         Yuanshen Guan, Ruikang Xu, Yinuo Liao, <u><b style="color:darkred">Mingde Yao</b></u>, Lizhi Wang, and Zhiwei Xiong.<br />
         <i>IEEE/CVF International Conference on Computer Vision <b><font color="DarkRed">(ICCV)</font></b>, 2025</i><br />
-        <span style="color:#333; font-size:14px;">Breaks HDR generation into <b style="color:#b00;">SDR + gain map</b>, unlocking high-quality HDR synthesis without any HDR data or encoders.</span><br />
+        <span id="desc-hdr" style="color:#333; font-size:14px;">Breaks HDR generation into <b style="color:#b00;">SDR + gain map</b>, unlocking high-quality HDR synthesis without any HDR data or encoders.</span><br />
         [ <a href='https://openaccess.thecvf.com/content/ICCV2025/papers/Guan_HDR_Image_Generation_via_Gain_Map_Decomposed_Diffusion_ICCV_2025_paper.pdf'>PDF</a> ]
         [ <a href='https://github.com/Guanys-dar/GM-Diffusion'>Code</a> ]
       </div>
@@ -752,7 +753,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
         <a><b>Realtime Video Frame Interpolation using One-Step Diffusion Sampling</b></a><br />
         Yongrui Ma, Shijie Zhao, <u><b style="color:darkred">Mingde Yao</b></u>, Junlin Li, Li Zhang, Xiaohong Liu, Qi Dou, Jinwei Gu, and Tianfan Xue.<br />
         <i>International Conference on Learning Representations <b><font color="DarkRed">(ICLR)</font></b>, 2026</i><br />
-        <span style="color:#333; font-size:14px;">Realtime video frame interpolation using one-step diffusion sampling — achieves <b style="color:#b00;">real-time 17 FPS</b> at 1024×576 with up to <b style="color:#b00;">44× acceleration</b> over Wan by modeling motion with one-step diffusion.</span><br />
+        <span id="desc-realtimevfi" style="color:#333; font-size:14px;">Realtime video frame interpolation using one-step diffusion sampling — achieves <b style="color:#b00;">real-time 17 FPS</b> at 1024×576 with up to <b style="color:#b00;">44× acceleration</b> over Wan by modeling motion with one-step diffusion.</span><br />
       </div>
       <div class="spanner"></div>
     </div>
@@ -767,7 +768,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
         <a><b>Bi-directional Autoregressive Diffusion for Large Complex Motion Interpolation</b></a><br />
         Yongrui Ma, Shijie Zhao, <u><b style="color:darkred">Mingde Yao</b></u>, Junlin Li, Li Zhang, Xiaohong Liu, Qi Dou, Jinwei Gu, and Tianfan Xue.<br />
         <i>IEEE/CVF Conference on Computer Vision and Pattern Recognition <b><font color="DarkRed">(CVPR)</font></b>, 2026</i><br />
-        <span style="color:#333; font-size:14px;"><b style="color:#b00;">First</b> autoregressive diffusion for VFI — <b style="color:#b00;">3× faster</b> than Wan, with better motion quality.</span><br />
+        <span id="desc-arvfi" style="color:#333; font-size:14px;"><b style="color:#b00;">First</b> autoregressive diffusion for VFI — <b style="color:#b00;">3× faster</b> than Wan, with better motion quality.</span><br />
       </div>
       <div class="spanner"></div>
     </div>
@@ -777,7 +778,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
 
     <div class="pub-group" id="group-photo">
       <div class="pub-group-header">
-        <h3 class="pub-group-title">Computational Photography & Restoration</h3>
+        <h3 class="pub-group-title" id="group-title-photo">Computational Photography & Restoration</h3>
         <button class="pub-group-toggle" type="button" aria-expanded="true">Collapse</button>
       </div>
       <div class="pub-group-content">
@@ -787,7 +788,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
         <u><b style="color:darkred">Mingde Yao</b></u>, Menglu Wang, King-Man Tam, Lingen Li, Tianfan Xue, and Jinwei Gu.<br />
         <i>IEEE Conference on Computer Vision and Pattern Recognition <b>
             <font color="DarkRed">(CVPR)</font></b>, 2025 </i><br />
-        <span style="color:#333; font-size:14px;"><b style="color:#b00;">First</b> polarization+RGB reflection removal framework, built on a <b style="color:#b00;">6.5K dataset (8× larger)</b>, delivering markedly cleaner, sharper images beyond prior methods.</span><br />
+        <span id="desc-polarfree" style="color:#333; font-size:14px;"><b style="color:#b00;">First</b> polarization+RGB reflection removal framework, built on a <b style="color:#b00;">6.5K dataset (8× larger)</b>, delivering markedly cleaner, sharper images beyond prior methods.</span><br />
         [ <a href='https://mdyao.github.io/PolarFree/'>PDF</a> ]
         [ <a href='https://mdyao.github.io/PolarFree/'>Project page</a> ]
         [ <a href='https://github.com/mdyao/PolarFree'>Code</a> ]
@@ -802,7 +803,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
         </b></a><br />
         Lingen Li, <u><b style="color:darkred">Mingde Yao</b></u>, Xingyu Meng, Muquan Yu, Tianfan Xue, and Jinwei Gu.<br />
         <i>Transactions on Image Processing <b><font color="DarkRed">(T-IP)</font></b>, 2025</i><br />
-        <span style="color:#333; font-size:14px;">A <b style="color:#b00;">unified, device-aware neural ISP</b> that learns forward and inverse pipelines across cameras, achieving <b style="color:#b00;">+2.4 dB / +1.5 dB PSNR</b> gains while enabling <b style="color:#b00;">cross-camera generalization</b> and new applications.</span><br />
+        <span id="desc-uniisp" style="color:#333; font-size:14px;">A <b style="color:#b00;">unified, device-aware neural ISP</b> that learns forward and inverse pipelines across cameras, achieving <b style="color:#b00;">+2.4 dB / +1.5 dB PSNR</b> gains while enabling <b style="color:#b00;">cross-camera generalization</b> and new applications.</span><br />
         [ <a href='https://lg-li.github.io/project/uni-isp'>Project page</a> ]
         [ <a href='https://arxiv.org/abs/2406.01003'>PDF</a> ]
         [ <a href='https://lg-li.github.io/pub-videos/li2024uni-isp-video.mp4'>Video</a> ]
@@ -818,6 +819,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
         <a><b>Neural Degradation Representation Learning for All-In-One Image Restoration</b></a><br />
         <u><b style="color:darkred">Mingde Yao</b></u>, Ruikang Xu, Yuanshen Guan, Jie Huang, and Zhiwei Xiong.<br />
         <i>Transactions on Image Processing <b><font color="DarkRed">(T-IP)</font></b>, 2024</i><br />
+        <span id="desc-ndrrestore" style="color:#333; font-size:14px;">An all-in-one image restoration framework that learns a unified neural degradation representation, enabling a single model to robustly handle diverse real-world corruptions with strong generalization and high-fidelity reconstruction.</span><br />
         [ <a href='https://arxiv.org/abs/2310.12848'>PDF</a> ]
         [ <a href='https://github.com/mdyao/NDR-Restore'>Code</a> ]
       </div>
@@ -830,6 +832,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
         <a><b>Generalized Lightness Adaptation with Channel Selective Normalization</b></a><br />
         <u><b style="color:darkred">Mingde Yao</b></u>*, Jie Huang*, Xin Jin, Ruikang Xu, Shenglong Zhou, Man Zhou, and Zhiwei Xiong.<br />
         <i>IEEE International Conference on Computer Vision <b><font color="DarkRed">(ICCV)</font></b>, 2023</i><br />
+        <span id="desc-csn" style="color:#333; font-size:14px;">An illumination-robust image enhancement method that selectively normalizes lightness-sensitive channels, enabling strong generalization across unseen lighting conditions without retraining.</span><br />
         [ <a href='https://openaccess.thecvf.com/content/ICCV2023/papers/Yao_Generalized_Lightness_Adaptation_with_Channel_Selective_Normalization_ICCV_2023_paper.pdf'>PDF</a> ]
         [ <a href='https://github.com/mdyao/CSN-Net-ICCV2023'>Code</a> ]
       </div>
@@ -844,6 +847,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
         <i>Transactions on Multimedia  <b>
             <font color="DarkRed">(T-MM)</font>
           </b>, 2023 </i><br />
+        <span id="desc-bitnet" style="color:#333; font-size:14px;">A cross-domain video translation framework for SDR↔HDR conversion that jointly handles resolution upscaling and dynamic range expansion with high fidelity and consistency.</span><br />
         [ <a href='https://ieeexplore.ieee.org/abstract/document/10025794'>PDF</a> ]
         [ <a href='https://github.com/mdyao/HDR-BiTNet'>Code</a> ]
         <br />
@@ -859,6 +863,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
         <i>IEEE Conference on Computer Vision and Pattern Recognition <b>
             <font color="DarkRed">(CVPR)</font>
           </b>, 2023 </i><br />
+        <span id="desc-idr" style="color:#333; font-size:14px;">An all-in-one image restoration framework that decomposes complex degradations into composable "ingredients," enabling flexible and accurate recovery under diverse real-world corruptions.</span><br />
         [ <a href='https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_Ingredient-Oriented_Multi-Degradation_Learning_for_Image_Restoration_CVPR_2023_paper.pdf'>PDF</a> ]
     [ <a href="javascript:togglebib(&#39;xxx1&#39;)" class="togglebib">Bibtex</a> ]<br />
     <pre xml:space="preserve" style="display: none;">
@@ -883,6 +888,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
         <i>IEEE Conference on Computer Vision and Pattern Recognition <b>
             <font color="DarkRed">(CVPR)</font>
           </b>, 2023 </i><br />
+        <span id="desc-zedusr" style="color:#333; font-size:14px;">A zero-shot super-resolution method that leverages dual-lens image pairs to learn image-specific priors, achieving high-quality reconstruction without external training data.</span><br />
         [ <a href='https://openaccess.thecvf.com/content/CVPR2023/papers/Xu_Zero-Shot_Dual-Lens_Super-Resolution_CVPR_2023_paper.pdf'>PDF</a> ]
         [ <a href='https://github.com/XrKang/ZeDuSR'>Code</a> ]
         [ <a href='https://cvpr.thecvf.com/media/cvpr-2023/Slides/22470.pdf'>Slide</a> ]
@@ -901,6 +907,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
         <i> IEEE Transactions on Circuits and Systems for Video Technology <b>
             <font color="DarkRed">(T-CSVT)</font>
           </b>, 2023 </i><br />
+        <span id="desc-interactive-denoise" style="color:#333; font-size:14px;">An interactive self-supervised denoising approach that removes noise without clean targets while enabling user-guided control for adaptive and content-aware restoration.</span><br />
         [ <a href='https://ieeexplore.ieee.org/abstract/document/10059001'>PDF</a> ]
         [ <a href='https://github.com/mdyao/Interact_Self_supervised_denoising'>Code</a> ]
     [ <a href="javascript:togglebib(&#39;TCSVT2023&#39;)" class="togglebib">Bibtex</a> ]<br />
@@ -923,7 +930,7 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
 
     <div class="pub-group" id="group-3d">
       <div class="pub-group-header">
-        <h3 class="pub-group-title">3D & Spectral Imaging</h3>
+        <h3 class="pub-group-title" id="group-title-3d">3D & Spectral Imaging</h3>
         <button class="pub-group-toggle" type="button" aria-expanded="true">Collapse</button>
       </div>
       <div class="pub-group-content">
@@ -1008,15 +1015,15 @@ Workshop</em></font> <b>
 
 <div style="clear: both;">
 <div class="section">
-<h2 id="confpapers">Awards</h2>
+<h2 id="awards-title">Awards</h2>
 <div class="paper">
 <ul>
 <!-- <li>The NTIRE Perceptual Extreme Super-Resolution Challenge on CVPR'20: Won 1st in SSIM, 2nd in PSNR, and 11th in LPIPS.</li> -->
 <!-- <li><font color="Red"><b>National Scholarship</b></font> awarded by the Ministry of Education, 2015</li>
 <li><font color="Red"><b>Outstanding Graduates</b></font> awarded by the Province Government, 2017</li> -->
-<li><font color="Red"><b>Winner</b></font> of Bokeh Effect Synthesis in ICCV AIM Challenge, 2019 </li>
-<li><font color="Blue"><b>Runner-Up</b></font> of Burst Super-Resolution in CVPR NTIRE Challenge, 2022</li>
-<li><font color="Blue"><b>Second runner-up</b></font> of Atmospheric Turbulence Mitigation in CVPR UG+ Challenge, 2022</li>
+<li id="award-1"><font color="Red"><b>Winner</b></font> of Bokeh Effect Synthesis in ICCV AIM Challenge, 2019 </li>
+<li id="award-2"><font color="Blue"><b>Runner-Up</b></font> of Burst Super-Resolution in CVPR NTIRE Challenge, 2022</li>
+<li id="award-3"><font color="Blue"><b>Second runner-up</b></font> of Atmospheric Turbulence Mitigation in CVPR UG+ Challenge, 2022</li>
 <!-- <li><font color="DarkRed"><b>ICCV Doctoral Consortium</b></font>, 2023</li> -->
 
 
@@ -1034,12 +1041,12 @@ Workshop</em></font> <b>
 
   
 <div style="clear: both;">
-<div class="section"><h2>Academic Activities</h2>
+<div class="section"><h2 id="activities-title">Academic Activities</h2>
 <div class="paper">
-<h3>Reviewer</h3>
-<li>T-PAMI, IJCV, T-NNLS, T-IP, T-MM, T-CSVT, CVPR, ICCV, ECCV, NeurIPS, ICLR, ICML, AISTATS, AAAI, ACMMM, IJCAI, ICME, <i>etc.</i> </li>
-<h3>Guest Editor</h3>
-<li>Special Issue on 
+<h3 id="reviewer-title">Reviewer</h3>
+<li id="reviewer-list">T-PAMI, IJCV, T-NNLS, T-IP, T-MM, T-CSVT, CVPR, ICCV, ECCV, NeurIPS, ICLR, ICML, AISTATS, AAAI, ACMMM, IJCAI, ICME, <i>etc.</i> </li>
+<h3 id="guest-editor-title">Guest Editor</h3>
+<li id="guest-editor-text">Special Issue on 
     <a href="https://www.sciencedirect.com/special-issue/322677/foundation-models-and-prompting-for-visual-tasks-in-harsh-conditions" style="color:black;">
       "Foundation Models and Prompting for Visual Tasks in Harsh Conditions"
     </a>
@@ -1078,8 +1085,8 @@ Workshop</em></font> <b>
 
 
 <div style="clear:both;">
-<p align="right"><font size="5">Last Updated in March, 2026</font></p>
-<p align="right"><font size="5">Published with <a href='https://pages.github.com/'>GitHub Pages</a></font></p>
+<p align="right"><font id="last-updated-text" size="5">Last Updated in March, 2026</font></p>
+<p align="right"><font id="published-with-text" size="5">Published with <a href='https://pages.github.com/'>GitHub Pages</a></font></p>
 </div>
 
 <hr>
@@ -1094,8 +1101,215 @@ Workshop</em></font> <b>
     var dateView = document.getElementById('pub-date-view');
     var dateLink = document.getElementById('pub-view-date');
     var topicLink = document.getElementById('pub-view-topic');
+    var langToggle = document.getElementById('lang-toggle');
     var STORAGE_KEY = 'mdyao_pub_groups_collapsed';
     var VIEW_KEY = 'mdyao_pub_view_mode';
+    var LANG_KEY = 'mdyao_site_lang';
+    var currentLang = 'en';
+
+    var i18n = {
+      en: {
+        navHome: 'Home',
+        navResearch: 'Research',
+        navNews: 'News',
+        navPapers: 'Papers',
+        navContact: 'Contact',
+        langToggle: '中文',
+        aboutTitle: 'About Me',
+        aboutIntro: 'Currently, I am a Postdoctoral Researcher at Multimedia Laboratory (MMLab), <a href="https://www.cuhk.edu.hk/">The Chinese University of Hong Kong (CUHK)</a>, advised by Prof. <a href="https://tianfan.info/">Tianfan Xue</a>, Prof. <a href="https://www.gujinwei.org/">Jinwei Gu</a> and Prof. <a href="https://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a>. Before that, I obtained my Ph.D. degree from <a href="http://en.ustc.edu.cn/">University of Science and Technology of China (USTC)</a> in 2023, advised by Prof. <a href="http://staff.ustc.edu.cn/~zwxiong/">Zhiwei Xiong</a>. I obtained my B. Eng. degree in the Department of Automation (Lang Shijun Honors Class) from Northeastern University, China, in 2018.',
+        aboutResearch: 'My research interests broadly lie in the areas of <i><strong style="color:Brown;">Agentic AI</strong></i>, <i><strong style="color:Brown;">deep generative models</strong></i>, <i><strong style="color:Brown;">computational photography</strong></i>, and general fields of computer vision and machine learning.',
+        aboutCollab: '<strong style="font-size:16px; color:DarkBlue;">I am always open to collaborations and discussions!</strong> If you are interested in my research or have any ideas to share, feel free to <a href="mailto:mingdeyao@foxmail.com" style="color:Brown;"><i class="fas fa-envelope" style="margin-right: 5px;"></i>reach out</a>.',
+        updatesTitle: 'Updates',
+        newsTag: 'New',
+        newsItem1: 'Two papers are accepted to <strong><a href="https://cvpr.thecvf.com/" style="color:DarkRed;">CVPR 2026.</a></strong>',
+        newsItem2: 'Two papers are accepted to <strong><a href="https://iclr.cc/" style="color:DarkRed;">ICLR 2026.</a></strong>',
+        newsItem3: 'One paper is accepted to <strong><a href="https://neurips.cc/" style="color:DarkRed;">NeurIPS 2025.</a></strong>',
+        newsItem4: 'One paper is accepted by <strong><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=83/" style="color:DarkRed;">T-IP.</a></strong>',
+        newsItem5: 'One paper is accepted to <strong><a href="https://iccv.thecvf.com/" style="color:DarkRed;">ICCV 2025.</a></strong>',
+        newsItem6: 'One paper is accepted by <strong><a href="https://www.sciencedirect.com/journal/information-fusion/" style="color:DarkRed;">Information Fusion.</a></strong>',
+        newsItem7: 'One paper for <a href="https://mdyao.github.io/PolarFree/" style="color:Brown;"><strong><i><u>Polarization-based Reflection-Free Imaging</u></i></strong></a> is accepted to <strong><a href="https://cvpr.thecvf.com/" style="color:DarkRed;">CVPR 2025</a></strong>.',
+        pubTitle: 'Selected Publications',
+        fullList: 'Full List',
+        viewByDate: 'show all by date',
+        viewByTopic: 'show all by topic',
+        groupAgentic: 'Agentic & Generative AI',
+        groupPhoto: 'Computational Photography & Restoration',
+        group3d: '3D & Spectral Imaging',
+        descPhotoAgent: 'An <b style="color:#b00;">autonomous photo editing agent</b> that performs multi-step aesthetic planning and refinement to transform images with minimal user input.',
+        descGCPO: 'A token-critical <b style="color:#b00;">RLVR</b> method for autoregressive image generation that selects <b style="color:#b00;">key tokens (30%)</b> for optimization, outperforming full-token baselines.',
+        descInstantRetouch: 'A one-step bilateral grid retouching model delivering <b style="color:#b00;">70–900× speedup</b>, eliminating content drift, and preserving high-fidelity edits.',
+        descHDR: 'Breaks HDR generation into <b style="color:#b00;">SDR + gain map</b>, unlocking high-quality HDR synthesis without any HDR data or encoders.',
+        descRealtimeVFI: 'Realtime video frame interpolation using one-step diffusion sampling — achieves <b style="color:#b00;">real-time 17 FPS</b> at 1024×576 with up to <b style="color:#b00;">44× acceleration</b> over Wan by modeling motion with one-step diffusion.',
+        descARVFI: '<b style="color:#b00;">First</b> autoregressive diffusion for VFI — <b style="color:#b00;">3× faster</b> than Wan, with better motion quality.',
+        descPolarFree: '<b style="color:#b00;">First</b> polarization+RGB reflection removal framework, built on a <b style="color:#b00;">6.5K dataset (8× larger)</b>, delivering markedly cleaner, sharper images beyond prior methods.',
+        descUniISP: 'A <b style="color:#b00;">unified, device-aware neural ISP</b> that learns forward and inverse pipelines across cameras, achieving <b style="color:#b00;">+2.4 dB / +1.5 dB PSNR</b> gains while enabling <b style="color:#b00;">cross-camera generalization</b> and new applications.',
+        descNDRRestore: 'An all-in-one image restoration framework that learns a unified neural degradation representation, enabling a single model to robustly handle diverse real-world corruptions with strong generalization and high-fidelity reconstruction.',
+        descCSN: 'An illumination-robust image enhancement method that selectively normalizes lightness-sensitive channels, enabling strong generalization across unseen lighting conditions without retraining.',
+        descBiTNet: 'A cross-domain video translation framework for SDR↔HDR conversion that jointly handles resolution upscaling and dynamic range expansion with high fidelity and consistency.',
+        descIDR: 'An all-in-one image restoration framework that decomposes complex degradations into composable "ingredients," enabling flexible and accurate recovery under diverse real-world corruptions.',
+        descZeDuSR: 'A zero-shot super-resolution method that leverages dual-lens image pairs to learn image-specific priors, achieving high-quality reconstruction without external training data.',
+        descInteractiveDenoise: 'An interactive self-supervised denoising approach that removes noise without clean targets while enabling user-guided control for adaptive and content-aware restoration.',
+        awardsTitle: 'Awards',
+        award1: '<font color="Red"><b>Winner</b></font> of Bokeh Effect Synthesis in ICCV AIM Challenge, 2019',
+        award2: '<font color="Blue"><b>Runner-Up</b></font> of Burst Super-Resolution in CVPR NTIRE Challenge, 2022',
+        award3: '<font color="Blue"><b>Second runner-up</b></font> of Atmospheric Turbulence Mitigation in CVPR UG+ Challenge, 2022',
+        activitiesTitle: 'Academic Activities',
+        reviewerTitle: 'Reviewer',
+        reviewerList: 'T-PAMI, IJCV, T-NNLS, T-IP, T-MM, T-CSVT, CVPR, ICCV, ECCV, NeurIPS, ICLR, ICML, AISTATS, AAAI, ACMMM, IJCAI, ICME, <i>etc.</i>',
+        guestEditorTitle: 'Guest Editor',
+        guestEditorText: 'Special Issue on <a href="https://www.sciencedirect.com/special-issue/322677/foundation-models-and-prompting-for-visual-tasks-in-harsh-conditions" style="color:black;">"Foundation Models and Prompting for Visual Tasks in Harsh Conditions"</a> in Pattern Recognition.',
+        lastUpdated: 'Last Updated in March, 2026',
+        publishedWith: 'Published with <a href="https://pages.github.com/">GitHub Pages</a>',
+        collapse: 'Collapse',
+        expand: 'Expand',
+        collapseAll: 'Collapse All',
+        expandAll: 'Expand All'
+      },
+      zh: {
+        navHome: '首页',
+        navResearch: '研究',
+        navNews: '动态',
+        navPapers: '论文',
+        navContact: '联系',
+        langToggle: 'EN',
+        aboutTitle: '个人简介',
+        aboutIntro: '目前，我在<a href="https://www.cuhk.edu.hk/">香港中文大学（CUHK）</a>多媒体实验室（MMLab）担任博士后研究员，合作导师为<a href="https://tianfan.info/">薛天帆</a>教授、<a href="https://www.gujinwei.org/">顾金伟</a>教授和<a href="https://www.ee.cuhk.edu.hk/~hsli/">李鸿升</a>教授。此前，我于 2023 年在<a href="http://en.ustc.edu.cn/">中国科学技术大学（USTC）</a>获得博士学位，导师为<a href="http://staff.ustc.edu.cn/~zwxiong/">熊志伟</a>教授。我于 2018 年在东北大学自动化专业（郎世俊荣誉班）获得工学学士学位。',
+        aboutResearch: '我的研究兴趣主要包括<i><strong style="color:Brown;">智能体 AI（Agentic AI）</strong></i>、<i><strong style="color:Brown;">深度生成模型</strong></i>、<i><strong style="color:Brown;">计算摄影</strong></i>，以及更广泛的计算机视觉与机器学习方向。',
+        aboutCollab: '<strong style="font-size:16px; color:DarkBlue;">欢迎学术交流与合作！</strong> 如果你对我的研究感兴趣，或有想法想讨论，欢迎随时<a href="mailto:mingdeyao@foxmail.com" style="color:Brown;"><i class="fas fa-envelope" style="margin-right: 5px;"></i>邮件联系</a>。',
+        updatesTitle: '最新动态',
+        newsTag: '新',
+        newsItem1: '两篇论文被 <strong><a href="https://cvpr.thecvf.com/" style="color:DarkRed;">CVPR 2026</a></strong> 接收。',
+        newsItem2: '两篇论文被 <strong><a href="https://iclr.cc/" style="color:DarkRed;">ICLR 2026</a></strong> 接收。',
+        newsItem3: '一篇论文被 <strong><a href="https://neurips.cc/" style="color:DarkRed;">NeurIPS 2025</a></strong> 接收。',
+        newsItem4: '一篇论文被 <strong><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=83/" style="color:DarkRed;">T-IP</a></strong> 接收。',
+        newsItem5: '一篇论文被 <strong><a href="https://iccv.thecvf.com/" style="color:DarkRed;">ICCV 2025</a></strong> 接收。',
+        newsItem6: '一篇论文被 <strong><a href="https://www.sciencedirect.com/journal/information-fusion/" style="color:DarkRed;">Information Fusion</a></strong> 接收。',
+        newsItem7: '关于 <a href="https://mdyao.github.io/PolarFree/" style="color:Brown;"><strong><i><u>Polarization-based Reflection-Free Imaging</u></i></strong></a> 的论文被 <strong><a href="https://cvpr.thecvf.com/" style="color:DarkRed;">CVPR 2025</a></strong> 接收。',
+        pubTitle: '代表性论文',
+        fullList: '完整列表',
+        viewByDate: '按年份查看',
+        viewByTopic: '按主题查看',
+        groupAgentic: '智能体与生成式 AI',
+        groupPhoto: '计算摄影与图像复原',
+        group3d: '三维与光谱成像',
+        descPhotoAgent: '一个<b style="color:#b00;">自主照片编辑智能体</b>，可进行多步美学规划与细化，在最少用户输入下完成图像风格化编辑。',
+        descGCPO: '一种面向自回归图像生成的关键 token <b style="color:#b00;">RLVR</b> 优化方法，仅选择<b style="color:#b00;">30% 关键 token</b>进行训练，性能优于全 token 基线。',
+        descInstantRetouch: '一种单步双边网格修图模型，实现<b style="color:#b00;">70–900× 加速</b>，避免内容漂移，并保持高保真编辑效果。',
+        descHDR: '将 HDR 生成分解为 <b style="color:#b00;">SDR + 增益图</b>，无需 HDR 数据或 HDR 编码器即可实现高质量 HDR 合成。',
+        descRealtimeVFI: '采用单步扩散采样实现实时插帧：在 1024×576 分辨率下达到<b style="color:#b00;">17 FPS 实时速度</b>，相对 Wan 最多可提速<b style="color:#b00;">44×</b>。',
+        descARVFI: '用于视频插帧的<b style="color:#b00;">首个</b>自回归扩散方法，相比 Wan <b style="color:#b00;">快 3×</b> 且运动质量更好。',
+        descPolarFree: '<b style="color:#b00;">首个</b>融合偏振与 RGB 的去反射框架，基于<b style="color:#b00;">6.5K 数据集（约 8× 更大）</b>，可获得更干净、更清晰的结果。',
+        descUniISP: '一个<b style="color:#b00;">统一且设备感知的神经 ISP</b>，可学习跨相机前向/逆向流程，在保证跨设备泛化的同时带来<b style="color:#b00;">+2.4 dB / +1.5 dB PSNR</b>提升。',
+        descNDRRestore: '一种一体化图像复原框架，通过学习统一的神经退化表征，使单一模型即可稳健处理多种真实退化，并实现良好泛化与高保真重建。',
+        descCSN: '一种对光照变化鲁棒的图像增强方法，通过选择性归一化对亮度敏感的通道，在无需重新训练的情况下也能泛化到未见光照场景。',
+        descBiTNet: '一种面向 SDR↔HDR 转换的跨域视频翻译框架，可联合处理分辨率提升与动态范围扩展，同时保持高保真与时序一致性。',
+        descIDR: '一种一体化图像复原框架，将复杂退化分解为可组合的“ingredients”，从而在多种真实退化下实现灵活且准确的恢复。',
+        descZeDuSR: '一种零样本超分辨率方法，利用双镜头图像对学习图像特定先验，无需外部训练数据即可实现高质量重建。',
+        descInteractiveDenoise: '一种交互式自监督去噪方法，在没有干净监督目标的条件下去除噪声，并支持用户引导控制，实现自适应、内容感知的复原。',
+        awardsTitle: '获奖情况',
+        award1: '在 ICCV AIM Challenge 的 Bokeh Effect Synthesis 赛道获得 <font color="Red"><b>冠军</b></font>（2019）',
+        award2: '在 CVPR NTIRE Challenge 的 Burst Super-Resolution 赛道获得 <font color="Blue"><b>亚军</b></font>（2022）',
+        award3: '在 CVPR UG+ Challenge 的 Atmospheric Turbulence Mitigation 赛道获得 <font color="Blue"><b>季军</b></font>（2022）',
+        activitiesTitle: '学术服务',
+        reviewerTitle: '审稿期刊/会议',
+        reviewerList: 'T-PAMI, IJCV, T-NNLS, T-IP, T-MM, T-CSVT, CVPR, ICCV, ECCV, NeurIPS, ICLR, ICML, AISTATS, AAAI, ACMMM, IJCAI, ICME 等。',
+        guestEditorTitle: '客座编辑',
+        guestEditorText: '担任 Pattern Recognition 专刊 <a href="https://www.sciencedirect.com/special-issue/322677/foundation-models-and-prompting-for-visual-tasks-in-harsh-conditions" style="color:black;">"Foundation Models and Prompting for Visual Tasks in Harsh Conditions"</a> 客座编辑。',
+        lastUpdated: '最后更新：2026 年 3 月',
+        publishedWith: '基于 <a href="https://pages.github.com/">GitHub Pages</a> 发布',
+        collapse: '收起',
+        expand: '展开',
+        collapseAll: '全部收起',
+        expandAll: '全部展开'
+      }
+    };
+
+    function t(key) {
+      var langPack = i18n[currentLang] || i18n.en;
+      return langPack[key] || i18n.en[key] || '';
+    }
+
+    function setHTML(id, value) {
+      var node = document.getElementById(id);
+      if (!node) return;
+      node.innerHTML = value;
+    }
+
+    function setText(id, value) {
+      var node = document.getElementById(id);
+      if (!node) return;
+      node.textContent = value;
+    }
+
+    function applyLanguage(lang) {
+      currentLang = (lang === 'zh') ? 'zh' : 'en';
+      document.documentElement.setAttribute('lang', currentLang === 'zh' ? 'zh-CN' : 'en');
+
+      setText('nav-home', t('navHome'));
+      setText('nav-research', t('navResearch'));
+      setText('nav-news', t('navNews'));
+      setText('nav-papers', t('navPapers'));
+      setText('nav-contact', t('navContact'));
+      setText('lang-toggle', t('langToggle'));
+
+      setText('about-title', t('aboutTitle'));
+      setHTML('about-intro', t('aboutIntro'));
+      setHTML('about-research', t('aboutResearch'));
+      setHTML('about-collab', t('aboutCollab'));
+
+      setText('updates-title', t('updatesTitle'));
+      setText('news-tag-1', t('newsTag'));
+      setText('news-tag-2', t('newsTag'));
+      setHTML('news-item-1', ' ' + t('newsItem1'));
+      setHTML('news-item-2', ' ' + t('newsItem2'));
+      setHTML('news-item-3', ' ' + t('newsItem3'));
+      setHTML('news-item-4', ' ' + t('newsItem4'));
+      setHTML('news-item-5', ' ' + t('newsItem5'));
+      setHTML('news-item-6', ' ' + t('newsItem6'));
+      setHTML('news-item-7', ' ' + t('newsItem7'));
+      setText('pub-title-text', t('pubTitle'));
+      setText('pub-full-list-link', t('fullList'));
+      setText('pub-view-date', t('viewByDate'));
+      setText('pub-view-topic', t('viewByTopic'));
+      setText('group-title-agentic', t('groupAgentic'));
+      setText('group-title-photo', t('groupPhoto'));
+      setText('group-title-3d', t('group3d'));
+      setHTML('desc-photoagent', t('descPhotoAgent'));
+      setHTML('desc-gcpo', t('descGCPO'));
+      setHTML('desc-instantretouch', t('descInstantRetouch'));
+      setHTML('desc-hdr', t('descHDR'));
+      setHTML('desc-realtimevfi', t('descRealtimeVFI'));
+      setHTML('desc-arvfi', t('descARVFI'));
+      setHTML('desc-polarfree', t('descPolarFree'));
+      setHTML('desc-uniisp', t('descUniISP'));
+      setHTML('desc-ndrrestore', t('descNDRRestore'));
+      setHTML('desc-csn', t('descCSN'));
+      setHTML('desc-bitnet', t('descBiTNet'));
+      setHTML('desc-idr', t('descIDR'));
+      setHTML('desc-zedusr', t('descZeDuSR'));
+      setHTML('desc-interactive-denoise', t('descInteractiveDenoise'));
+
+      setText('awards-title', t('awardsTitle'));
+      setHTML('award-1', t('award1'));
+      setHTML('award-2', t('award2'));
+      setHTML('award-3', t('award3'));
+      setText('activities-title', t('activitiesTitle'));
+      setText('reviewer-title', t('reviewerTitle'));
+      setHTML('reviewer-list', t('reviewerList'));
+      setText('guest-editor-title', t('guestEditorTitle'));
+      setHTML('guest-editor-text', t('guestEditorText'));
+      setText('last-updated-text', t('lastUpdated'));
+      setHTML('published-with-text', t('publishedWith'));
+
+      groups.forEach(function (group) {
+        updateGroupButton(group);
+      });
+      updateAllButton();
+
+      try {
+        localStorage.setItem(LANG_KEY, currentLang);
+      } catch (e) {}
+    }
 
     function getState() {
       try {
@@ -1116,7 +1330,7 @@ Workshop</em></font> <b>
       var button = group.querySelector('.pub-group-toggle');
       if (!button) return;
       var collapsed = group.classList.contains('collapsed');
-      button.textContent = collapsed ? 'Expand' : 'Collapse';
+      button.textContent = collapsed ? t('expand') : t('collapse');
       button.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
     }
 
@@ -1128,7 +1342,7 @@ Workshop</em></font> <b>
           allCollapsed = false;
         }
       });
-      allButton.textContent = allCollapsed ? 'Expand All' : 'Collapse All';
+      allButton.textContent = allCollapsed ? t('expandAll') : t('collapseAll');
     }
 
     function extractYear(paperNode) {
@@ -1238,6 +1452,19 @@ Workshop</em></font> <b>
       topicLink.addEventListener('click', function () {
         applyView('topic');
       });
+    }
+
+    if (langToggle) {
+      langToggle.addEventListener('click', function () {
+        applyLanguage(currentLang === 'zh' ? 'en' : 'zh');
+      });
+    }
+
+    try {
+      var initialLang = localStorage.getItem(LANG_KEY) || 'en';
+      applyLanguage(initialLang);
+    } catch (e) {
+      applyLanguage('en');
     }
 
     updateAllButton();
