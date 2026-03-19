@@ -227,6 +227,35 @@ img.paper {
 
 }
 
+/* Hover switcher for paper thumbnails (two images). */
+.thumb-switch {
+  float: left;
+  width: 250px;
+  position: relative;
+  padding-left: 0 !important; /* override div.paper div padding-left */
+  line-height: 0;
+}
+.thumb-switch img.base,
+.thumb-switch img.swap {
+  float: none !important;
+  width: 250px;
+  display: block;
+}
+.thumb-switch img.swap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: auto;
+  opacity: 0;
+  transition: opacity 160ms ease-in-out;
+}
+div.paper:hover .thumb-switch img.swap {
+  opacity: 1;
+}
+div.paper:hover .thumb-switch img.base {
+  opacity: 0;
+}
+
 img.experience {
   /* margin-bottom: 0.4em; */
   padding-top: 10px;
@@ -330,6 +359,89 @@ ol {
 #nav a:hover {
     color: #ffde00;
     /* background-color: #242d36 ; */
+}
+
+/* Publication group */
+.pub-group {
+  margin-top: 0.25em;
+}
+
+.pub-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.pub-head h2 {
+  margin: 0;
+}
+
+.pub-all-toggle {
+  border: 1px solid #B8C2D9;
+  background: #EEF2FF;
+  color: #1E293B;
+  border-radius: 8px;
+  font-size: 12px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.pub-all-toggle:hover {
+  background: #E0E7FF;
+}
+
+.pub-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0.9em 0 0.35em 0;
+  border-left: 4px solid #1E3A8A;
+  padding-left: 8px;
+}
+
+.pub-group-title {
+  margin: 0;
+  color: #1E3A8A;
+}
+
+.pub-group-toggle {
+  border: 1px solid #B8C2D9;
+  background: #F7F9FF;
+  color: #334155;
+  border-radius: 8px;
+  font-size: 12px;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.pub-group-toggle:hover {
+  background: #EEF2FF;
+}
+
+.pub-group.collapsed > .pub-group-content {
+  display: none;
+}
+
+.pub-view-switch {
+  margin: 0.25em 0 0.8em 0;
+  color: #444;
+  font-size: 14px;
+}
+
+.pub-view-switch a {
+  color: #043d98;
+  cursor: pointer;
+}
+
+.pub-view-switch a.active {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+#pub-date-view {
+  display: none;
 }
 </style>
 
@@ -543,13 +655,20 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
 
 
 <a name="pub"></a>
-<h2 id="confpapers">Selected Publications [ <a href="https://scholar.google.com/citations?user=fsE3MzwAAAAJ&hl=en">Full List</a> ] </h2>
+<div class="pub-head">
+  <h2 id="confpapers">Selected Publications [ <a href="https://scholar.google.com/citations?user=fsE3MzwAAAAJ&hl=en">Full List</a> ] </h2>
+  <button class="pub-all-toggle" id="pub-toggle-all" type="button">Collapse All</button>
+</div>
+<div class="pub-view-switch">
+  ( <a id="pub-view-date" role="button">show all by date</a> / <a id="pub-view-topic" class="active" role="button">show all by topic</a> )
+</div>
 <!--   [ <a href="http://whwu95.github.io/publication.html">Full List</a> ] </h2> -->
 <!-- <b>( *Co-first Author, <sup><span lang="EN-US"
       style="mso-bidi-font-size:8pt;font-family:Wingdings;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman';mso-char-type:symbol;mso-symbol-font-family:Wingdings">*</span></sup>Correspondence)</b> -->
 
 <div class="section">
   <div class="bio">
+  <div id="pub-topic-view">
 
 
 
@@ -557,108 +676,183 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
 
 
 
-    <!-- CVPR25 -->
-    <div class="paper" id="xxx"><img class="paper" src="papers/2025/PolarFree.png" />
+    <div class="pub-group" id="group-agentic">
+      <div class="pub-group-header">
+        <h3 class="pub-group-title">Agentic & Generative AI</h3>
+        <button class="pub-group-toggle" type="button" aria-expanded="true">Collapse</button>
+      </div>
+      <div class="pub-group-content">
+    <!-- PhotoAgent (2026) -->
+    <div class="paper" id="PhotoAgent">
+      <div class="thumb-switch">
+        <img class="paper base" src="papers/2026-photoagent-input.jpg" />
+        <img class="paper swap" src="papers/2026-photoagent-output.jpg" />
+      </div>
+      <div>
+        <a><b>PhotoAgent: Agentic Photo Editing with Exploratory Visual Aesthetic Planning</b></a><br />
+        <u><b style="color:darkred">Mingde Yao</b></u>, Zhiyuan You, King-Man Tam, Menglu Wang, and Tianfan Xue.<br />
+        <i>arXiv Preprint<b><font color="DarkRed"></font></b>, 2026</i><br />
+        <span style="color:#333; font-size:14px;">An <b style="color:#b00;">autonomous photo editing agent</b> that performs multi-step aesthetic planning and refinement to transform images with minimal user input.</span><br />
+        [ <a href='https://arxiv.org/pdf/2602.22809'>PDF</a> ]
+        [ <a href='https://mdyao.github.io/PhotoAgent/'>Project page</a> ]
+        [ <a href='https://github.com/mdyao/PhotoAgent'>Code</a> ]
+      </div>
+      <div class="spanner"></div>
+    </div>
+
+    <!-- ICLR26: GCPO -->
+    <div class="paper" id="GCPO"><img class="paper" src="papers/2026-gcpo.jpg" />
+      <div>
+        <a><b>Group Critical-token Policy Optimization for Autoregressive Image Generation</b></a><br />
+        Guohui Zhang, Hu Yu, Xiaoxiao Ma, Jinghao Zhang, Yaning Pan, <u><b style="color:darkred">Mingde Yao</b></u>, Jie Xiao, Linjiang Huang, and Feng Zhao.<br />
+        <i>International Conference on Learning Representations <b><font color="DarkRed">(ICLR)</font></b>, 2026</i><br />
+        <span style="color:#333; font-size:14px;">A token-critical <b style="color:#b00;">RLVR</b> method for autoregressive image generation that selects <b style="color:#b00;">key tokens (30%)</b> for optimization, outperforming full-token baselines.</span><br />
+        [ <a href='https://arxiv.org/abs/2509.22485'>arXiv</a> ]
+      </div>
+      <div class="spanner"></div>
+    </div>
+
+    <!-- CVPR26: InstantRetouch -->
+    <div class="paper" id="InstantRetouch"><img class="paper" src="papers/2026-InstantRetouch.jpg" />
+      <div>
+        <a><b>InstantRetouch: Efficient and High-Fidelity Instruction-Guided Image Retouching with Bilateral Space</b></a><br />
+        Jiarui Wu, Yujin Wang, Ruikang Li, Fan Zhang, <u><b style="color:darkred">Mingde Yao</b></u>, and Tianfan Xue.<br />
+        <i>IEEE/CVF Conference on Computer Vision and Pattern Recognition <b><font color="DarkRed">(CVPR)</font></b>, 2026</i><br />
+        <span style="color:#333; font-size:14px;">A one-step bilateral grid retouching model delivering <b style="color:#b00;">70–900× speedup</b>, eliminating content drift, and preserving high-fidelity edits.</span><br />
+        [ <a href='https://gnwekge78707.github.io/papers/DistilledBilateral___CVPR_2026__arxiv_.pdf'>PDF</a> ]
+      </div>
+      <div class="spanner"></div>
+    </div>
+
+    <!-- HDR Gain Map Diffusion -->
+    <div class="paper" id="HDRGainMap">
+      <div class="thumb-switch">
+        <img class="paper base" src="papers/2025-hdr-input.jpg" />
+        <img class="paper swap" src="papers/2025-hdr-output.jpg" />
+      </div>
+      <div>
+        <a><b>HDR Image Generation via Gain Map Decomposed Diffusion</b></a><br />
+        Yuanshen Guan, Ruikang Xu, Yinuo Liao, <u><b style="color:darkred">Mingde Yao</b></u>, Lizhi Wang, and Zhiwei Xiong.<br />
+        <i>IEEE/CVF International Conference on Computer Vision <b><font color="DarkRed">(ICCV)</font></b>, 2025</i><br />
+        <span style="color:#333; font-size:14px;">Breaks HDR generation into <b style="color:#b00;">SDR + gain map</b>, unlocking high-quality HDR synthesis without any HDR data or encoders.</span><br />
+        [ <a href='https://openaccess.thecvf.com/content/ICCV2025/papers/Guan_HDR_Image_Generation_via_Gain_Map_Decomposed_Diffusion_ICCV_2025_paper.pdf'>PDF</a> ]
+        [ <a href='https://github.com/Guanys-dar/GM-Diffusion'>Code</a> ]
+      </div>
+      <div class="spanner"></div>
+    </div>
+
+    
+    <!-- ICLR26: Realtime VFI -->
+    <div class="paper" id="RealtimeVFI">
+      <div class="thumb-switch">
+        <img class="paper base" src="papers/2026-realtime-vfi-input.jpg" />
+        <img class="paper swap" src="papers/2026-realtime-vfi-output.jpg" />
+      </div>
+      <div>
+        <a><b>Realtime Video Frame Interpolation using One-Step Diffusion Sampling</b></a><br />
+        Yongrui Ma, Shijie Zhao, <u><b style="color:darkred">Mingde Yao</b></u>, Junlin Li, Li Zhang, Xiaohong Liu, Qi Dou, Jinwei Gu, and Tianfan Xue.<br />
+        <i>International Conference on Learning Representations <b><font color="DarkRed">(ICLR)</font></b>, 2026</i><br />
+        <span style="color:#333; font-size:14px;">Realtime video frame interpolation using one-step diffusion sampling — achieves <b style="color:#b00;">real-time 17 FPS</b> at 1024×576 with up to <b style="color:#b00;">44× acceleration</b> over Wan by modeling motion with one-step diffusion.</span><br />
+      </div>
+      <div class="spanner"></div>
+    </div>
+
+    <!-- CVPR26: Bi-directional AR diffusion for motion interpolation -->
+    <div class="paper" id="ARVFI">
+      <div class="thumb-switch">
+        <img class="paper base" src="papers/2026-arvfi-input.jpg" />
+        <img class="paper swap" src="papers/2026-arvfi-output.jpg" />
+      </div>
+      <div>
+        <a><b>Bi-directional Autoregressive Diffusion for Large Complex Motion Interpolation</b></a><br />
+        Yongrui Ma, Shijie Zhao, <u><b style="color:darkred">Mingde Yao</b></u>, Junlin Li, Li Zhang, Xiaohong Liu, Qi Dou, Jinwei Gu, and Tianfan Xue.<br />
+        <i>IEEE/CVF Conference on Computer Vision and Pattern Recognition <b><font color="DarkRed">(CVPR)</font></b>, 2026</i><br />
+        <span style="color:#333; font-size:14px;"><b style="color:#b00;">First</b> autoregressive diffusion for VFI — <b style="color:#b00;">3× faster</b> than Wan, with better motion quality.</span><br />
+      </div>
+      <div class="spanner"></div>
+    </div>
+
+      </div>
+    </div>
+
+    <div class="pub-group" id="group-photo">
+      <div class="pub-group-header">
+        <h3 class="pub-group-title">Computational Photography & Restoration</h3>
+        <button class="pub-group-toggle" type="button" aria-expanded="true">Collapse</button>
+      </div>
+      <div class="pub-group-content">
+    <div class="paper" id="xxx"><img class="paper" src="papers/2025-PolarFree.png" />
       <div>
         <a><b>PolarFree: Polarization-based Reflection-Free Imaging</b></a><br />
         <u><b style="color:darkred">Mingde Yao</b></u>, Menglu Wang, King-Man Tam, Lingen Li, Tianfan Xue, and Jinwei Gu.<br />
         <i>IEEE Conference on Computer Vision and Pattern Recognition <b>
             <font color="DarkRed">(CVPR)</font></b>, 2025 </i><br />
+        <span style="color:#333; font-size:14px;"><b style="color:#b00;">First</b> polarization+RGB reflection removal framework, built on a <b style="color:#b00;">6.5K dataset (8× larger)</b>, delivering markedly cleaner, sharper images beyond prior methods.</span><br />
         [ <a href='https://mdyao.github.io/PolarFree/'>PDF</a> ]
         [ <a href='https://mdyao.github.io/PolarFree/'>Project page</a> ]
         [ <a href='https://github.com/mdyao/PolarFree'>Code</a> ]
         [ <a href='https://huggingface.co/datasets/Mingde/PolaRGB'>Dataset</a> ]
-
       </div>
       <div class="spanner"></div>
     </div>
 
-    <!-- arxiv24 -->
-
-    <div class="paper" id="xxx"><img class="paper" src="papers/2025/Uni-ISP.png" />
+    <div class="paper" id="xxx"><img class="paper" src="papers/2025-Uni-ISP.png" />
       <div>
         <a><b>Uni-ISP: Unifying the Learning of ISPs from Multiple Cameras
         </b></a><br />
         Lingen Li, <u><b style="color:darkred">Mingde Yao</b></u>, Xingyu Meng, Muquan Yu, Tianfan Xue, and Jinwei Gu.<br />
-        <i>arXiv Preprint<b><font color="DarkRed"></font></b>, 2024</i><br />
+        <i>Transactions on Image Processing <b><font color="DarkRed">(T-IP)</font></b>, 2025</i><br />
+        <span style="color:#333; font-size:14px;">A <b style="color:#b00;">unified, device-aware neural ISP</b> that learns forward and inverse pipelines across cameras, achieving <b style="color:#b00;">+2.4 dB / +1.5 dB PSNR</b> gains while enabling <b style="color:#b00;">cross-camera generalization</b> and new applications.</span><br />
         [ <a href='https://lg-li.github.io/project/uni-isp'>Project page</a> ]
         [ <a href='https://arxiv.org/abs/2406.01003'>PDF</a> ]
         [ <a href='https://lg-li.github.io/pub-videos/li2024uni-isp-video.mp4'>Video</a> ]
         [ <a href='https://lg-li.github.io/project/uni-isp'>Code</a> ]
         [ <a href='https://lg-li.github.io/dataset/five-cam'>FiveCam Dataset</a> ]
-
-        
-        
-      </div>
-      <div class="spanner"></div>
-    </div>
-
-
-    <!-- IJCV24 -->
-    <div class="paper" id="xxx"><img class="paper" src="papers/2024/NeSR.png" />
-      <div>
-        <a><b>Continuous Spatial-Spectral Reconstruction via Implicit Neural Representation</b></a><br />
-        Ruikang Xu, <u><b style="color:darkred">Mingde Yao</b></u>,Chang Chen, Lizhi Wang, and Zhiwei Xiong.<br />
-        <i>ECCV <font color="Gray"> Mobile Intelligent Photography & Imaging
-          Workshop</i></font> <b>
-                      <font color="DarkRed">(ECCVW)</font>
-                    </b>, 2022 </i><br /> 
-                  </font><font color="Red"><b>[Best Paper Honorable Mention]</b></font><br /> 
-        <i>International Journal of Computer Vision <b><font color="DarkRed">(IJCV)</font></b>, 2024</i><br />
-        [ <a href='https://arxiv.org/abs/2310.12848'>PDF (Conference Version)</a> ]
-        [ <a href='https://link.springer.com/article/10.1007/s11263-024-02150-3'>PDF (Journal Version)</a> ]
-        [ <a href='https://github.com/XrKang/NeSSR'>Code</a> ]
-
       </div>
       <div class="spanner"></div>
     </div>
 
     <!-- TIP24 -->
-    <div class="paper" id="xxx"><img class="paper" src="papers/2023/DR-Restore.png" />
+    <div class="paper" id="xxx"><img class="paper" src="papers/2023-DR-Restore.png" />
       <div>
         <a><b>Neural Degradation Representation Learning for All-In-One Image Restoration</b></a><br />
         <u><b style="color:darkred">Mingde Yao</b></u>, Ruikang Xu, Yuanshen Guan, Jie Huang, and Zhiwei Xiong.<br />
         <i>Transactions on Image Processing <b><font color="DarkRed">(T-IP)</font></b>, 2024</i><br />
         [ <a href='https://arxiv.org/abs/2310.12848'>PDF</a> ]
         [ <a href='https://github.com/mdyao/NDR-Restore'>Code</a> ]
-
       </div>
       <div class="spanner"></div>
     </div>
 
     <!-- ICCV23 -->
-    <div class="paper" id="xxx"><img class="paper" src="papers/2023/CSN.png" />
+    <div class="paper" id="xxx"><img class="paper" src="papers/2023-CSN.png" />
       <div>
         <a><b>Generalized Lightness Adaptation with Channel Selective Normalization</b></a><br />
         <u><b style="color:darkred">Mingde Yao</b></u>*, Jie Huang*, Xin Jin, Ruikang Xu, Shenglong Zhou, Man Zhou, and Zhiwei Xiong.<br />
         <i>IEEE International Conference on Computer Vision <b><font color="DarkRed">(ICCV)</font></b>, 2023</i><br />
         [ <a href='https://openaccess.thecvf.com/content/ICCV2023/papers/Yao_Generalized_Lightness_Adaptation_with_Channel_Selective_Normalization_ICCV_2023_paper.pdf'>PDF</a> ]
         [ <a href='https://github.com/mdyao/CSN-Net-ICCV2023'>Code</a> ]
-
       </div>
       <div class="spanner"></div>
     </div>
 
-    <!-- CVPR23 -->
-    <div class="paper" id="CVPR23"><img class="paper" src="papers/2023/ZeDuSR2.png" />
+    <!-- TMM2023 -->
+    <div class="paper" id="TMM2023"><img class="paper" src="papers/2023-BiTNet.gif" />
       <div>
-        <a><b>Zero-Shot Dual-Lens Super-Resolution</b></a><br />
-        Ruikang Xu*, <u><b style="color:darkred">Mingde Yao</b></u>*, and Zhiwei Xiong.<br />
-        <i>IEEE Conference on Computer Vision and Pattern Recognition <b>
-            <font color="DarkRed">(CVPR)</font>
+        <a><b>Bidirectional Translation between HD-SDR and UHD-HDR Videos</b></a><br />
+         <u><b style="color:darkred">Mingde Yao</b></u>, Dongliang He, Xin Li, Zhihong Pan, and Zhiwei Xiong.<br />
+        <i>Transactions on Multimedia  <b>
+            <font color="DarkRed">(T-MM)</font>
           </b>, 2023 </i><br />
-        [ <a href='https://openaccess.thecvf.com/content/CVPR2023/papers/Xu_Zero-Shot_Dual-Lens_Super-Resolution_CVPR_2023_paper.pdf'>PDF</a> ]
-        [ <a href='https://github.com/XrKang/ZeDuSR'>Code</a> ]
-        [ <a href='https://cvpr.thecvf.com/media/cvpr-2023/Slides/22470.pdf'>Slide</a> ]
-        [ <a href='https://www.youtube.com/watch?v=ChHAIGyDFAI'>Video</a> ]
+        [ <a href='https://ieeexplore.ieee.org/abstract/document/10025794'>PDF</a> ]
+        [ <a href='https://github.com/mdyao/HDR-BiTNet'>Code</a> ]
         <br />
       </div>
       <div class="spanner"></div>
     </div>
 
-
     <!-- CVPR23 -->
-    <div class="paper" id="CVPR23"><img class="paper" src="papers/2023/IDR.png" />
+    <div class="paper" id="CVPR23"><img class="paper" src="papers/2023-IDR.png" />
       <div>
         <a><b>Ingredient-oriented Multi-Degradation Learning for Image Restoration</b></a><br />
         Jinghao Zhang, Jie Huang, <u><b style="color:darkred">Mingde Yao</b></u>, Zizheng Yang, Hu Yu, Man Zhou, and Feng Zhao.<br />
@@ -681,25 +875,25 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
       <div class="spanner"></div>
     </div>
 
-
-    <!-- TMM2023 -->
-    <div class="paper" id="TMM2023"><img class="paper" src="papers/2023/BiTNet.gif" />
+    <!-- CVPR23 -->
+    <div class="paper" id="CVPR23"><img class="paper" src="papers/2023-ZeDuSR2.png" />
       <div>
-        <a><b>Bidirectional Translation between HD-SDR and UHD-HDR Videos</b></a><br />
-         <u><b style="color:darkred">Mingde Yao</b></u>, Dongliang He, Xin Li, Zhihong Pan, and Zhiwei Xiong.<br />
-        <i>Transactions on Multimedia  <b>
-            <font color="DarkRed">(T-MM)</font>
+        <a><b>Zero-Shot Dual-Lens Super-Resolution</b></a><br />
+        Ruikang Xu*, <u><b style="color:darkred">Mingde Yao</b></u>*, and Zhiwei Xiong.<br />
+        <i>IEEE Conference on Computer Vision and Pattern Recognition <b>
+            <font color="DarkRed">(CVPR)</font>
           </b>, 2023 </i><br />
-        [ <a href='https://ieeexplore.ieee.org/abstract/document/10025794'>PDF</a> ]
-        [ <a href='https://github.com/mdyao/HDR-BiTNet'>Code</a> ]
+        [ <a href='https://openaccess.thecvf.com/content/CVPR2023/papers/Xu_Zero-Shot_Dual-Lens_Super-Resolution_CVPR_2023_paper.pdf'>PDF</a> ]
+        [ <a href='https://github.com/XrKang/ZeDuSR'>Code</a> ]
+        [ <a href='https://cvpr.thecvf.com/media/cvpr-2023/Slides/22470.pdf'>Slide</a> ]
+        [ <a href='https://www.youtube.com/watch?v=ChHAIGyDFAI'>Video</a> ]
         <br />
       </div>
       <div class="spanner"></div>
     </div>
 
-
     <!-- TCSVT2023 -->
-    <div class="paper" id="TCSVT2023"><img class="paper" src="papers/2023/self_inter_dn.png" />
+    <div class="paper" id="TCSVT2023"><img class="paper" src="papers/2023-self_inter_dn.png" />
       <div>
         <a><b>Towards Interactive Self-Supervised Denoising
 </b></a><br />
@@ -719,16 +913,57 @@ My research interests broadly lie in the areas of <i><strong style="color:Brown;
       publisher={IEEE}
       }
       </pre>
-
-
         <br />
+      </div>
+      <div class="spanner"></div>
+    </div>
+
+      </div>
+    </div>
+
+    <div class="pub-group" id="group-3d">
+      <div class="pub-group-header">
+        <h3 class="pub-group-title">3D & Spectral Imaging</h3>
+        <button class="pub-group-toggle" type="button" aria-expanded="true">Collapse</button>
+      </div>
+      <div class="pub-group-content">
+    <!-- NopeRoomGS -->
+    <div class="paper" id="NopeRoomGS">
+      <div class="thumb-switch">
+        <img class="paper base" src="papers/2025-noperoom-input.jpg" />
+        <img class="paper swap" src="papers/2025-noperoom-output.jpg" />
+      </div>
+      <div>
+        <a><b>NopeRoomGS: Indoor 3D Gaussian Splatting Optimization without Camera Pose Input</b></a><br />
+        Wenbo Li*, Yan Xu*, <u><b style="color:darkred">Mingde Yao</b></u>, Fengjie Liang, Jiankai Sun, Menglu Wang, Guofeng Zhang, Linjiang Huang, and Hongsheng Li.<br />
+        <i>Advances in Neural Information Processing Systems <b><font color="DarkRed">(NeurIPS)</font></b>, 2025</i><br />
+        <span style="color:#333; font-size:14px;">A <b style="color:#b00;">pose-free 3DGS</b> framework that eliminates <b style="color:#b00;">SfM</b>, delivering robust pose estimation and photorealistic view synthesis even in <b style="color:#b00;">textureless scenes</b> and under <b style="color:#b00;">abrupt camera motion</b>.</span><br />
+      </div>
+      <div class="spanner"></div>
+    </div>
+
+    
+    <!-- IJCV24 -->
+    <div class="paper" id="xxx"><img class="paper" src="papers/2024-NeSR.png" />
+      <div>
+        <a><b>Continuous Spatial-Spectral Reconstruction via Implicit Neural Representation</b></a><br />
+        Ruikang Xu, <u><b style="color:darkred">Mingde Yao</b></u>,Chang Chen, Lizhi Wang, and Zhiwei Xiong.<br />
+        <i>International Journal of Computer Vision <b><font color="DarkRed">(IJCV)</font></b>, 2024</i><br />
+        <i>ECCV <font color="Gray"> Mobile Intelligent Photography & Imaging
+          Workshop</i></font> <b>
+                      <font color="DarkRed">(ECCVW)</font>
+                    </b>, 2022 </i><br /> 
+                  </font><font color="Red"><b>[Best Paper Honorable Mention]</b></font><br /> 
+        [ <a href='https://arxiv.org/abs/2310.12848'>PDF (Conference Version)</a> ]
+        [ <a href='https://link.springer.com/article/10.1007/s11263-024-02150-3'>PDF (Journal Version)</a> ]
+        [ <a href='https://github.com/XrKang/NeSSR'>Code</a> ]
       </div>
       <div class="spanner"></div>
     </div>
 
 
     <!-- ECCVW2022
-    <div class="paper" id="ECCVW2022"><img class="paper" src="papers/2022/NeSR.png" />
+    <div class="paper" id="ECCVW2022"><img class="paper" src="papers/2022-NeSR.png" />
       <div>
         <a><b>Continuous Spectral Reconstruction from RGB Images via Implicit Neural Representation
 </b></a><br />
@@ -747,7 +982,7 @@ Workshop</em></font> <b>
 
 
   <!-- OE2019 -->
-    <div class="paper" id="OE2019"><img class="paper" src="papers/2019/OE19.png" />
+    <div class="paper" id="OE2019"><img class="paper" src="papers/2022-OE19.png" />
       <div>
         <a><b>Spectral-depth imaging with deep learning based reconstruction
 </b></a><br />
@@ -762,6 +997,10 @@ Workshop</em></font> <b>
 
 
 
+      </div>
+    </div>
+  </div>
+  <div id="pub-date-view"></div>
 </div>
 </div>
 
@@ -846,6 +1085,172 @@ Workshop</em></font> <b>
 <hr>
 <div id="clustrmaps-widget"></div>
 <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=Oiyd_ZsSxaiYwrp_EYx0zILMmpUPf8-9re9sJssfxww&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
+
+<script>
+  (function () {
+    var groups = document.querySelectorAll('.pub-group');
+    var allButton = document.getElementById('pub-toggle-all');
+    var topicView = document.getElementById('pub-topic-view');
+    var dateView = document.getElementById('pub-date-view');
+    var dateLink = document.getElementById('pub-view-date');
+    var topicLink = document.getElementById('pub-view-topic');
+    var STORAGE_KEY = 'mdyao_pub_groups_collapsed';
+    var VIEW_KEY = 'mdyao_pub_view_mode';
+
+    function getState() {
+      try {
+        var raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : {};
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function setState(state) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {}
+    }
+
+    function updateGroupButton(group) {
+      var button = group.querySelector('.pub-group-toggle');
+      if (!button) return;
+      var collapsed = group.classList.contains('collapsed');
+      button.textContent = collapsed ? 'Expand' : 'Collapse';
+      button.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+    }
+
+    function updateAllButton() {
+      if (!allButton) return;
+      var allCollapsed = true;
+      groups.forEach(function (group) {
+        if (!group.classList.contains('collapsed')) {
+          allCollapsed = false;
+        }
+      });
+      allButton.textContent = allCollapsed ? 'Expand All' : 'Collapse All';
+    }
+
+    function extractYear(paperNode) {
+      var text = paperNode.textContent || '';
+      var match = text.match(/(20\d{2})/g);
+      if (!match || !match.length) return 0;
+      return parseInt(match[match.length - 1], 10);
+    }
+
+    function setActiveLink(mode) {
+      [dateLink, topicLink].forEach(function (node) {
+        if (node) node.classList.remove('active');
+      });
+      if (mode === 'date' && dateLink) dateLink.classList.add('active');
+      if (mode === 'topic' && topicLink) topicLink.classList.add('active');
+    }
+
+    function ensureDateViewBuilt() {
+      if (!dateView || dateView.dataset.built === '1') return;
+      var allPapers = [];
+      groups.forEach(function (group) {
+        var papers = group.querySelectorAll('.paper');
+        papers.forEach(function (paper) {
+          allPapers.push(paper);
+        });
+      });
+      allPapers.sort(function (a, b) {
+        return extractYear(b) - extractYear(a);
+      });
+      allPapers.forEach(function (paper) {
+        dateView.appendChild(paper.cloneNode(true));
+      });
+      dateView.dataset.built = '1';
+    }
+
+    function applyView(mode) {
+      if (!topicView || !dateView || !allButton) return;
+      setActiveLink(mode);
+      if (mode === 'date') {
+        ensureDateViewBuilt();
+        topicView.style.display = 'none';
+        dateView.style.display = 'block';
+        allButton.style.visibility = 'hidden';
+      } else {
+        topicView.style.display = 'block';
+        dateView.style.display = 'none';
+        allButton.style.visibility = 'visible';
+      }
+      try {
+        localStorage.setItem(VIEW_KEY, mode);
+      } catch (e) {}
+    }
+
+    var state = getState();
+    groups.forEach(function (group, index) {
+      var key = group.id || ('group_' + index);
+      if (state[key]) {
+        group.classList.add('collapsed');
+      }
+      updateGroupButton(group);
+
+      var button = group.querySelector('.pub-group-toggle');
+      if (!button) return;
+      button.addEventListener('click', function () {
+        var currentGroup = button.closest('.pub-group');
+        if (!currentGroup) return;
+        var currentKey = currentGroup.id || ('group_' + index);
+        var collapsed = currentGroup.classList.toggle('collapsed');
+        state[currentKey] = collapsed;
+        setState(state);
+        updateGroupButton(currentGroup);
+        updateAllButton();
+      });
+    });
+
+    if (allButton) {
+      allButton.addEventListener('click', function () {
+        var hasExpanded = false;
+        groups.forEach(function (group) {
+          if (!group.classList.contains('collapsed')) {
+            hasExpanded = true;
+          }
+        });
+        var shouldExpand = !hasExpanded;
+        groups.forEach(function (group, index) {
+          var key = group.id || ('group_' + index);
+          if (shouldExpand) {
+            group.classList.remove('collapsed');
+            state[key] = false;
+          } else {
+            group.classList.add('collapsed');
+            state[key] = true;
+          }
+          updateGroupButton(group);
+        });
+        setState(state);
+        updateAllButton();
+      });
+    }
+
+    if (dateLink) {
+      dateLink.addEventListener('click', function () {
+        applyView('date');
+      });
+    }
+    if (topicLink) {
+      topicLink.addEventListener('click', function () {
+        applyView('topic');
+      });
+    }
+
+    updateAllButton();
+    var initialView = 'topic';
+    try {
+      initialView = localStorage.getItem(VIEW_KEY) || 'topic';
+      if (initialView !== 'date' && initialView !== 'topic') {
+        initialView = 'topic';
+      }
+    } catch (e) {}
+    applyView(initialView);
+  })();
+</script>
 
 </body>
 </html>
